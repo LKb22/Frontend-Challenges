@@ -1,0 +1,24 @@
+
+.container{
+  display: flex; 
+  min-height: 300px;
+  align-items: flex-start;
+}
+
+.elemento3{
+  align-self: stretch;
+}
+
+body{
+	margin: 20px;
+	font-family: sans-serif;
+    background-color: #555;
+}
+
+.elemento{
+	min-height: 2em;
+	background: #BADA55;
+	border: 1px solid #555;
+	padding: 1em 2em;
+    flex-basis: 200px;
+}

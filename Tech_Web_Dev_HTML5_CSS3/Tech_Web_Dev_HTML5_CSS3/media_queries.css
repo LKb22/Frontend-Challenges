@@ -1,0 +1,61 @@
+/*Estilos generales*/
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 5em 20px;
+  font-family: sans-serif;
+  background-color: #444;
+}
+
+.contenedor{
+  overflow: hidden;
+}
+
+.bloque1,
+.bloque2,
+.bloque3,
+.bloque4{
+  background: lightgrey;
+  border: 2px solid #444;
+  padding: 3em 1em;
+  text-align: center;
+}
+
+
+
+/*Media queries*/
+@media screen and (min-width: 500px){
+  .bloque1,
+  .bloque2,
+  .bloque3,
+  .bloque4{
+    float: left;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 800px){
+  .bloque1{
+    width: 100%;
+  }
+  
+  .bloque2,
+  .bloque3,
+  .bloque4{
+    float: left;
+    width: 33.33%;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .bloque1,
+  .bloque2,
+  .bloque3,
+  .bloque4{
+    float: left;
+    width: 25%;
+  }
+}

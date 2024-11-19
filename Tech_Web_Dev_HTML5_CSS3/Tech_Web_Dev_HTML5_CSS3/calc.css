@@ -1,0 +1,48 @@
+
+.columna1{
+  width: calc(50% - 10px);
+  margin-right: 20px;
+}
+
+.columna2{
+  width: calc(50% - 10px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Estilos generales*/
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 5em 20px;
+  font-family: sans-serif;
+  background-color: #444;
+}
+
+.contenedor{
+  border: 1px solid #BADA55;
+  overflow: hidden;
+}
+
+.columna1,
+.columna2{
+  background: lightgrey;
+  float: left;
+  padding: 3em 1em;
+  text-align: center;
+}

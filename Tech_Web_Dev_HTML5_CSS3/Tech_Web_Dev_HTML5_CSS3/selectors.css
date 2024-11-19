@@ -1,0 +1,92 @@
+:root {
+    background-color: antiquewhite;
+}
+
+body {
+	font-family: sans-serif;
+	padding-left: 2em;
+}
+
+h2 {
+	margin-top: 2em;
+}
+
+p {
+    color: aqua;
+    margin-left: 50px;
+}
+
+p:empty {
+    display: list-item;
+}
+
+p:not(.not) {
+    text-decoration:line-through;
+}
+
+p:first-of-type::first-letter {
+    float: left;
+    font-size: 2em;
+    font-family: script;
+}
+
+::selection {
+    background: #D2527F;
+    color: white;
+}
+
+li {
+	margin-top: .5em;
+}
+
+li::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('Images/istockphoto-464988959-612x612.jpg');
+    background-size: contain; /* Or cover, depending on how you want it to scale */
+    background-repeat: no-repeat;
+    margin-right: 5px; /* To add some space between the image and the text */
+}
+
+li::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('Images/istockphoto-464988959-612x612.jpg');
+    background-size: contain; /* Or cover, depending on how you want it to scale */
+    background-repeat: no-repeat;
+    margin-right: 5px; /* To add some space between the image and the text */
+}
+
+a[href*="/comogusteis/"] {
+	color: #ff0000;
+}
+
+a[href$=".pdf"] {
+	color: #cd00ff;
+}
+
+a[href="mailto:enriqueiv@rey.es"] {
+	color: deepskyblue;
+}
+
+a[href^="http"] {
+	color: #ffe100;
+}
+
+img {
+    width: 10px;
+}
+
+table {
+	border-collapse: collapse;
+	margin-bottom: 4em;
+}
+
+td {
+	padding: .5em 1em;
+	border: 1px solid whitesmoke;
+}

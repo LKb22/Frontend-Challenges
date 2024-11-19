@@ -1,0 +1,39 @@
+.container {
+    margin: 30px;
+}
+
+.squares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    width: 100%;
+}
+
+.rotate {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rotate span {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background:
+        linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+        linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+        linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+        linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
+        background-size: 100px 100px;
+        background-color: #EC173A;
+    transition: transform 0.5s ease; /* Add a smooth transition */
+}
+
+.rotate:hover span {
+    transform: rotate(720deg);
+    border-radius: 50%;
+    background-color: yellow;
+}

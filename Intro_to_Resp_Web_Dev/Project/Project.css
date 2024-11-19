@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: #f5f0ed;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    color: white;
+}
+
+.logo img {
+    max-height: 30px;
+}
+
+.launcher-menu {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 12px;
+    padding: 10px 14px;
+    background-color: #d03b40;
+    border-radius: 3px;
+}
+
+.js .navigation {
+    max-height: 0;
+    text-decoration: none;
+    overflow: hidden;
+    transition: max-height .5s;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #d03b40;
+}
+
+.js .navigation a {
+    color: #FFF;
+    font-size: 12px;
+    margin: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+
+.js .navigation.display-menu{
+    max-height: 115px;
+    border-radius: 3px;
+}
+
+.hero {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url('images/Fondo1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 75px 30px 50px 30px;
+}
+
+.hero-text {
+    max-width: 450px;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 30px;
+}
+
+.hero-text p {
+    font-size: 15px;
+    margin-bottom: 15px
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.info-block-red {
+    padding: 50px;
+    background-color: #d03b40;
+    color: #f5f0ed;
+    text-align: center;
+}
+
+.info-block-white {
+    padding: 50px;
+    background-color: #ded6c0;
+    color: #d03b40;
+    text-align: center;
+}
+
+.breakfast {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/Fondo2.jpg');
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.breakfast-content {
+    max-width: 450px;
+    text-align: center;
+}
+
+.breakfast p {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.breakfast h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.breakfast button {
+    background-color: rgba(255, 255, 255, 0);
+    color: #fff;
+    font-size: 14px;
+    border: 2px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.product-item {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 30px;
+}
+
+.product-item-content {
+    text-align: center;
+}
+
+.product-item img {
+    width: 90px;
+    height: 90px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.contact-info {
+    color: #d03b40;
+    background-color: #ded6c0;
+    padding: 50px;
+    width: 100%;
+}
+
+.location {
+    color: #f5f0ed;
+    background-color: #d03b40;
+    padding: 50px;
+    width: 100%;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #241d1b;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .launcher-menu {
+        font-size: 16px;
+    }
+
+    .js .navigation {
+        top: 66px;
+        right: 14px;
+    }
+
+    .js .navigation a {
+        font-size: 16px;
+    }
+
+    .logo img {
+        max-height: 35px;
+    }
+    
+    .info {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .info-block-red {
+        padding: 55px 100px;
+    }
+
+    .info-block-white {
+        padding: 55px 100px;
+    }
+
+    .info h2 {
+        font-size: 16px;
+    }
+    
+    .breakfast {
+        height: 400px;
+    }
+
+    .breakfast p {
+        font-size: 16px;
+    }
+
+    .breakfast h2 {
+        font-size: 24px;
+    }
+
+    .breakfast button {
+        font-size: 16px;
+    }
+
+    .products {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .product-item {
+        display: flex;
+        justify-content: flex-start;
+        max-width: 50%;
+    }
+    
+    .product-item img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .product-item-content {
+        text-align: start;
+        align-content: flex-start;
+    }
+    
+    h3 {
+        font-size: 16px;
+    }
+    
+    p {
+        font-size: 12px;
+        /* text-align: justify; */
+    }
+
+    .contact {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    .launcher-menu {
+        font-size: 18px;
+    }
+
+    .js .navigation {
+        top: 68px;
+        right: 11px;
+    }
+
+    .js .navigation a {
+        font-size: 18px;
+    }
+    
+    .hero-text h1 {
+    font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 17px;
+    }
+    
+    .info-block-red {
+        padding: 55px 150px;
+    }
+
+    .info-block-white {
+        padding: 55px 150px;
+    }
+    
+    .info h2 {
+        font-size: 18px;
+    }
+    
+    .breakfast {
+        height: 450px;
+    }
+
+    .breakfast p {
+        font-size: 18px;
+    }
+
+    .breakfast h2 {
+        font-size: 28px;
+    }
+
+    .breakfast button {
+        font-size: 18px;
+    }
+    
+    .product-item img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    h3 {
+        font-size: 18px;
+    }
+    
+    p {
+        font-size: 14px;
+        /* text-align: justify; */
+    }
+}
+
+@media (min-width: 1300px) {
+    .launcher-menu {
+        font-size: 20px;
+    }
+
+    .js .navigation {
+        top: 70px;
+        right: 8px;
+    }
+
+    .js .navigation a {
+        font-size: 20px;
+    }
+    
+    .info-block-red {
+        padding: 55px 200px;
+    }
+
+    .info-block-white {
+        padding: 55px 200px;
+    }
+
+    .info h2 {
+        font-size: 22px;
+    }
+    
+    .breakfast {
+        height: 500px;
+    }
+
+    .breakfast p {
+        font-size: 22px;
+    }
+
+    .breakfast h2 {
+        font-size: 32px;
+    }
+
+    .breakfast button {
+        font-size: 22px;
+    }
+    
+    .product-item img {
+        width: 170px;
+        height: 170px;
+    }
+    
+    h3 {
+        font-size: 22px;
+    }
+    
+    p {
+        font-size: 18px;
+        /* text-align: justify; */
+    }
+}

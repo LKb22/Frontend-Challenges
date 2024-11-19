@@ -1,0 +1,225 @@
+/**** Organizing styles in a style sheet:
+ * 
+ * It's better to put the general styles at the top/beginning, and the more specific styles below/afer.
+ * Essentially, work top down from most general to most specific.
+ * 
+ * Using comments is a great way to help organize yourself and know where to put each thing.
+ * 
+ * The CSS formatting is as follows:
+    selector{
+        property: value;
+*
+* The id practically overwrites any other statement. So, you should generally use classes, not ids, to apply CSS styles.
+*
+* Any instruction further down the sheet overwrites the previous one, hence 'cascading' style sheets. 
+*
+* Adding specifications allows you to make changes to only select things without affecting others.
+* The more specific the statement, the better the opportunity to maintain a line and prevent it from being overwritten.
+*/
+
+/**** General ****/
+
+/* There is a universal selector, or asterisk, which is meant to affect all html elements. This is rarely used. It is written as: */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 10px;
+
+}
+
+article{
+    overflow: hidden;
+    padding: 30px 35px;
+    background-color: rgb(89, 65, 155);
+}
+
+div{
+    padding: 30px 20px;
+    margin: 15px 40px; 
+    background-color: white;
+}
+
+p{
+    margin-bottom: 10px;
+    font-size: 18px;
+    /* Define a 'stack' or an order of font preferences: '1,2,3' */
+    font-family: Arial, Helvetica, sans-serif;
+    
+    /* Font names with spaces go in parentheses */
+    font-family: "Times New Roman", serif;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*** Typographic styles: ***/
+h1{
+    font-size: 50px;
+    text-decoration: none;
+    color: rgb(68, 0, 128);
+    background-color: antiquewhite;
+}
+
+h2{
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 600;
+    color: rgb(0, 128, 0);
+}
+
+h3{
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 600;
+    color: rgba(17, 0, 255, 0.4);
+}
+
+h4{
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 600;
+    color: hsl(0, 100%, 50%);
+}
+
+h5{
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 600;    
+}
+
+p1{
+    margin-bottom: 10px;
+    font-size: 18px;
+    
+    /* Define a 'stack' or an order of font preferences: '1,2,3' */
+    font-family: Arial, Helvetica, sans-serif;
+    
+    /* Font names with spaces go in parentheses */
+    font-family: "Times New Roman", serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Lobster", sans-serif;
+}
+
+p2{
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: lighter;
+    font-style: normal;
+    text-decoration: underline;
+    font-variation-settings: "wdth" 150;
+    font-size: 18px;
+}
+
+p3{
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+/**** Media queries ****/
+
+/* Use a mobile first approach.
+ * This means that you start with the smallest screen size of 360 px and add larger and larger media queries,
+ * altering the styling to work up to larger screens. 
+
+@media screen and (min-width:920px){
+    
+    #c1,#c2,#c3,#c4{
+        float: left;
+        width: 49%;
+        }
+    #c1,#c3{
+        margin-right: 2%;
+        }
+}
+
+@media screen and (min-width:1400px){
+    
+    #c1,#c2,#c3,#c4{
+        width: 24.25%;
+        }
+    #c1,#c2,#c3{
+        margin-right: 1%;
+        }
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 10px;
+    background-color: aqua;
+    padding: 10px;
+}
+
+/* Use # to call on the name of an ID */
+#Structure{
+    background-color: rgb(89, 65, 155);
+    margin-bottom: 10px;
+    padding: 5px 24px;
+}
+
+/* Use div.[name] to call on the name of a class */
+div.b1{
+    display: block;
+    width: 100%;
+    height: 150px;
+    float: left;
+}
+div.b2{
+    display: block;
+    width: 100%;
+    height: 300px;
+    float: left;
+}
+div.b3{
+    display: block;
+    width: 49%;
+    height: 300px;
+    float: left;
+}
+div.b4{
+    display: block;
+    width: 49%;
+    height: 300px;
+    float: right;
+}
+div.b5{
+    display: block;
+    width: 100%;
+    height: 300px;
+    float: left;
+}
+div.b6{
+    display: block;
+    width: 49%;
+    height: 300px;
+    float: left;
+}
+div.b7{
+    display: block;
+    width: 49%;
+    height: 300px;
+    float: right;
+}
+
+ul li{
+    list-style-type: none; /* common for links as a list so that the links do not have bullets */
+    list-style-type: disc;
+    list-style-type: square;
+    list-style-type: upper-latin;
+    list-style-position: outside;
+    list-style-position: inside; /* add list style position to inside to add additional left padding/indent. Outside is the default. */
+    padding-left: 10px;
+}
+
+ol li{
+    font-style: oblique;
+    display: inline; 
+    display: inline-block; /* Inline or inline-block is common for lists to display link elements horizointally instead of vertically. */
+} 

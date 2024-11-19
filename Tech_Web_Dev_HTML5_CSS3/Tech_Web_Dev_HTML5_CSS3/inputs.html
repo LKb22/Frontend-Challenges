@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="inputs.css" />
+    </head>
+    <body>
+        <form method="post" action="#">
+         <div>
+          <label for="search">Search:</label>
+          <input type="search" id="search">
+        </div>
+
+        <div>
+          <label for="number">Number:</label>
+          <input type="number" id="number">
+        </div>
+
+         <div>
+          <label for="range">Range:</label>
+          <input type="range" id="range">
+        </div>
+
+         <div>
+          <label for="color">Color:</label>
+          <input type="color" id="color">
+        </div>
+
+        <div>
+          <label for="date">Date:</label>
+          <input type="date" id="date">
+        </div>
+
+        <div>
+          <label for="month">Month:</label>
+          <input type="month" id="month">
+        </div>
+
+        <div>
+          <label for="week">Week:</label>
+          <input type="week" id="week">
+        </div>
+
+        <div>
+          <label for="time">Time:</label>
+          <input type="time" id="time">
+        </div>
+        </form>
+        <form method="post" action="#">
+        
+        <div>
+            <label for="potter">Who is your favorite Harry Potter character?</label>
+            <input type="text" id="potter" list="characters">
+            
+            <datalist id="characters">
+                <option value="Harry">
+                <option value="Ron">
+                <option value="Hermione">
+            </datalist>
+        </div>
+
+         <div>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" autofocus> 
+        </div>
+        <div>
+          <label for="email">Email:</label>
+           <input type="email" id="email" placeholder="ejemplo@mail.com"> 
+        </div>
+        <div>
+          <label for="years">Años de experiencia:</label>
+           <input type="number" id="years" min="2" max="30"> 
+        </div>
+        <div>
+          <label for="quant">Cantidad:</label>
+           <input type="number" id="quant" step="6"> 
+        </div>
+        <div>
+          <label for="word">Palabra clave:</label>
+           <input type="text" id="word" maxlength="6"> 
+        </div>
+        <div>
+          <label for="address">Dirección:</label>
+           <input type="text" id="address" required> 
+        </div>
+        <div>
+          <label for="password">Password:</label>
+           <input type="text" id="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required> 
+            <small>Password must include at least one uppercase letter, one lowercase letter, one digit, and no spaces.</small>
+        </div>
+        <div>
+           <input type="submit" value="Enviar"> 
+        </div>
+        </form>
+        
+        <form method="post" action="#">
+          <div>
+            <label for="name2">Nombre:</label>
+            <input type="text" id="name2" placeholder="Pon tu nombre…">
+          </div>
+          <div>
+            <label for="req">Email:</label>
+            <input type="email" id="req" required>
+          </div>
+          <div>
+            <input type="checkbox" id="check">
+            <label for="check">
+              Acepto las condiciones
+            </label>
+          </div>
+          <div>
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+    </body>
+</html>

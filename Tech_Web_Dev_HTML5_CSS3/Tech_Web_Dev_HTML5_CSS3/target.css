@@ -1,0 +1,46 @@
+#menu{
+  display: none;
+}
+
+#menu:target{
+  display: block;
+}
+
+a{
+  color: #444;
+}
+
+body{
+  font-family: sans-serif;
+  padding: 3em;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  max-width: 50%;
+}
+
+a{
+  text-decoration: none;
+}
+
+li a{
+  background-color: #444;
+  color: #ececec;
+  display: block;
+  padding: 15px 20px;
+  border-bottom: 1px solid #666;
+}
+
+.lanzador{
+  background-color: #444;
+  color: #ececec;
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 3px;
+}
+
+.lanzador:hover{
+  background-color: #555;
+}

@@ -1,0 +1,135 @@
+ <!-- This is the format to add comments in html, like the # in python.
+    The document labels are necessary for the browser to display our website correctly.
+    A well formatted html page will follow these basic building blocks:
+
+    <!DOCTYPE html>
+    <html>
+        <head> (To include meta information or files needed to display the page, such as CSS or the like.)
+            <link rel='stylesheet' href='name_of_sheet.css'>
+            <title>name_of_title</title>
+            <meta charset='utf-8'> (To recognize special characters, eg. umlauts)
+            <link rel="preconnect" (To link a font from Google Fonts)
+        </head> 
+        <body> (To indiate what part of the entire html document is the content)
+        </body>
+    </html>
+    -->
+    
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project_1</title>
+        <meta charset='utf-8'>
+        <!-- use this viewport meta tag to inform a mobile browser that the page is adapted for them. */ -->
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0"> 
+        <link rel='stylesheet' href='Style.css'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        </style>
+    </head>
+    <body>
+            <!-- Add block labels:-->
+            
+            <!--The div tag is designed to group content blocks.-->
+        
+            <!-- Add a text using the 'div tag and the 'container' class.-->
+        
+        <!-- use a hashtag to link to another class or id of the same name -->
+        <div class='container'>
+            <a href="#menu" class="launcher-menu" id="menu-link">Menu</a>
+            <div>
+                Here is a text using the div tag and container class and an <em> em </em> and a <strong> strong </strong>.
+            </div>
+
+                <!-- Add a text and a paragraph using the 'div' tag and the 'main' class, calling first on the text in the div class, then on the paragraph.
+                    * The paragraph inside the div inherits the standard font-size of the div of 20px. Use the em function to make the text inside the paragraph 1.5 times larger than the inherited 20px.-->
+            <div class='main'>
+                Here is the part outside the paragraph, which is not effected.
+                <p> Here is the part inside the paragraph being called upon using the class 'main' and the paragraph p funtion.</p>
+                Here is outside, again.
+                <P> And, here is inside, again. These two texts inside the paragraph functions are also 1.5 times the inherited font-size of 20px using the em function (1.5em).</P>
+                </div>
+
+                <!-- Add the 'span' function, inside a paragraph, inside the class 'main', inside the 'div' function.-->
+            <div class='main'>
+                <p>
+                    Here is the part <span> inside the span inside the paragraph.</span>
+                </p>
+                <span>Here is a span outside the paragraph.</span>
+                <span>And again.</span>
+                </div>
+
+                <!-- The 'unordered list'. For example:-->
+            <div class="box">
+                Here is a text in a box.
+            </div>
+            <div class="display">
+                Here is a text to work on display property. Here is a break. <br> This text also uses the @import to use a font from google fonts.
+            </div>
+            <div class="overflow">
+                Here is a paragraph for working with the overflow property.
+            </div>
+            <div class="One">
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+            </div>
+            <div class="Two">
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAA
+            </div>
+            <div class="Position">
+                <p> A paragraph for positioning.</p>
+                <span>A span</span>
+                <span class="alt"> Alt Span</span>
+            </div>
+            <div class="borderbox">
+                Border Box
+            </div>
+            <div class="radius1">
+            </div>
+            <div class="radius2">
+            </div>
+            <div class="radius3">
+            </div>
+            <div class="radius4">
+            </div>
+            <div class="Image">
+            </div>
+            <!-- To get a structure that is flexible to suit different screen sizes, we can use widths in percentages. --> 
+            <div class="responsive_structure1">
+            </div>
+            <div class="responsive_structure2">
+            </div>
+            <div> <img src="Images/Tree.jpeg"></div>
+            <!-- use .. to go up a folder level (<div> <img src="../../Images/Tree.jpeg"></div>)
+            <!-- font-size em is a unit relative to the inherited font size. For example, a 1.5em font size for a paragraph is a font-size
+                1.5 times larger than the font-size set for the div that the paragraph is situated within.-->
+            <div id="menu" class="navigation">
+                <ul>
+                    <li><a href="">About</a></li>
+                    <li><a href="tel:*490000000000">Telephone</a></li>
+                    <li><a href="mailto:lkucinski3@gmail.com">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <script src="javascript.js"></script>
+    </body>
+</html>
