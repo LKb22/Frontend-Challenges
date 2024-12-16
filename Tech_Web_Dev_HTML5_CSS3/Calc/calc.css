@@ -1,11 +1,11 @@
 
 .columna1{
-  width: calc(50% - 10px);
-  margin-right: 20px;
+  width: calc(50% - 20px);
+  margin-right: 40px;
 }
 
 .columna2{
-  width: calc(50% - 10px);
+  width: calc(50% - 20px);
 }
 
 
