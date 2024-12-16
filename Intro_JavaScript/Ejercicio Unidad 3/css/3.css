@@ -56,7 +56,7 @@ button:focus {
   outline: 0;
 }
 
-.mensaje {
+.message {
   background-image: var(--gradient);
   margin-bottom: 2rem;
   color: white;
@@ -65,10 +65,10 @@ button:focus {
   font-size: 1.5rem;
 }
 
-.mensaje:empty {
+.message:empty {
   display: none;
 }
 
-.mensaje p {
+.message p {
   margin: 1em 0;
 }

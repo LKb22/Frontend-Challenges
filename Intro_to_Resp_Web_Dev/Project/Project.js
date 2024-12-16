@@ -1,23 +1,23 @@
 /* Variables: change them to the corresponding id and class */
 
 /* id of the link that displays the menu */
-var launcher = "#menu-link";
+const launcher = "#menu-link";
 
 /* id of the menu that will be displayed */
-var dropdown = "#menu";
+const dropdown = "#menu";
 
 /* class (without the dot) that shows the menu */
-var displayClass = "display-menu";
-	
+const displayClass = "display-menu";
+
 /* we declare the functions */
 function nav(){
-	var launch = document.querySelector(launcher);	
+	const launch = document.querySelector(launcher);
 	launch.addEventListener("click", displayMenu, false);
 }
 
 function displayMenu(e){
 	e.preventDefault();
-	var display = document.querySelector(dropdown);
+	const display = document.querySelector(dropdown);
 	display.classList.toggle(displayClass);
 }
 
