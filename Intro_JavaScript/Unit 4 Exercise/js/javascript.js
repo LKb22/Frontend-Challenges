@@ -2,8 +2,10 @@
 var cardGroup = ["🦄", "🍦", "🌈", "👽", "👾", "🤖", "👹", "👺"];
 
 // EXERCISE: Concatenate cardGroup with itself to duplicate the values
+// Total cards, created by duplicating the group
 var totalCards = cardGroup.concat(cardGroup);
 
+// Function to shuffle cards
 function shuffleCards() {
   var result;
   result = totalCards.sort(function() {
@@ -12,6 +14,7 @@ function shuffleCards() {
   return result;
 }
 
+// Function to deal cards onto the table
 function dealCards() {
   var table = document.querySelector("#mesa"); // Select the table
   var shuffledCards = shuffleCards();
@@ -34,12 +37,13 @@ function dealCards() {
       "</div>";
 
     // EXERCISE: Add the created card as a "child" of the table node
-    table.appendChild(card);
+    table.appendChild(card); // Add each card to the table
   });
 
   // BONUS: You could make the cards only deal when a button with text "Repartir cartas" is clicked
 }
 
+// Function to reveal a card
 function reveal() {
   this.classList.add("descubierta"); // Add 'revealed' class to show the card
 }
