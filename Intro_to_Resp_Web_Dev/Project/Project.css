@@ -79,7 +79,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-image: url('images/Fondo1.jpg');
+    background-image: url('/Intro_to_Resp_Web_Dev/Project/Images/Fondo1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -134,7 +134,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('images/Fondo2.jpg');
+    background-image: url('/Intro_to_Resp_Web_Dev/Project/Images/Fondo2.jpg');
     background-size: cover;
     background-position: left;
     background-repeat: no-repeat;
@@ -233,12 +233,12 @@ footer {
     .logo img {
         max-height: 35px;
     }
-    
+
     .info {
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .info-block-red {
         padding: 55px 100px;
     }
@@ -250,7 +250,7 @@ footer {
     .info h2 {
         font-size: 16px;
     }
-    
+
     .breakfast {
         height: 400px;
     }
@@ -273,27 +273,27 @@ footer {
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    
+
     .product-item {
         display: flex;
         justify-content: flex-start;
         max-width: 50%;
     }
-    
+
     .product-item img {
         width: 120px;
         height: 120px;
     }
-    
+
     .product-item-content {
         text-align: start;
         align-content: flex-start;
     }
-    
+
     h3 {
         font-size: 16px;
     }
-    
+
     p {
         font-size: 12px;
         /* text-align: justify; */
@@ -318,7 +318,7 @@ footer {
     .js .navigation a {
         font-size: 18px;
     }
-    
+
     .hero-text h1 {
     font-size: 36px;
     }
@@ -326,7 +326,7 @@ footer {
     .hero-text p {
         font-size: 17px;
     }
-    
+
     .info-block-red {
         padding: 55px 150px;
     }
@@ -334,11 +334,11 @@ footer {
     .info-block-white {
         padding: 55px 150px;
     }
-    
+
     .info h2 {
         font-size: 18px;
     }
-    
+
     .breakfast {
         height: 450px;
     }
@@ -354,16 +354,16 @@ footer {
     .breakfast button {
         font-size: 18px;
     }
-    
+
     .product-item img {
         width: 140px;
         height: 140px;
     }
-    
+
     h3 {
         font-size: 18px;
     }
-    
+
     p {
         font-size: 14px;
         /* text-align: justify; */
@@ -383,7 +383,7 @@ footer {
     .js .navigation a {
         font-size: 20px;
     }
-    
+
     .info-block-red {
         padding: 55px 200px;
     }
@@ -395,7 +395,7 @@ footer {
     .info h2 {
         font-size: 22px;
     }
-    
+
     .breakfast {
         height: 500px;
     }
@@ -411,16 +411,16 @@ footer {
     .breakfast button {
         font-size: 22px;
     }
-    
+
     .product-item img {
         width: 170px;
         height: 170px;
     }
-    
+
     h3 {
         font-size: 22px;
     }
-    
+
     p {
         font-size: 18px;
         /* text-align: justify; */
