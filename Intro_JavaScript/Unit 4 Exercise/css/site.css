@@ -1,3 +1,6 @@
+/* For global styles and custom properties */
+
+/* Custom properties (also called variables) */
 :root {
   --bg: #fafafa;
   --font: "Archivo", sans-serif;
@@ -7,6 +10,7 @@
   --gradient: linear-gradient(35deg, var(--orange), var(--hotpink));
 }
 
+/* Global styles */
 body {
   margin: auto;
   min-height: 100vh;
