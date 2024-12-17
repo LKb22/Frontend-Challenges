@@ -33,3 +33,5 @@ function collectData(event) {
 
 const myForm = document.querySelector("#form");
 myForm.addEventListener("submit", collectData); // No brackets so function is not called immediately
+
+
