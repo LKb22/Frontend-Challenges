@@ -4,7 +4,8 @@
 // Guess the cards by clicking on them
 // Check the guess for a match
 
-// Initialize a deck of cards
+
+// Create a deck of cards
 // The deck of cards will be an array of emojis, each card being one emoji
 
 // Create a function to generate an array of 15 random emojis
@@ -46,3 +47,51 @@ function createCardGroup() {
   return finalShuffledEmojis
 }
 console.log(createCardGroup());
+
+
+// Deal the cards
+// Create a function to deal the cards
+// The cards will be dealt into the table div
+// Clear the table div before adding the cards
+// Each emoji in the finalShuffledEmojis array will be added to a card div
+// Iterate over the finalShuffledEmojis array using forEach()
+// For each emoji in the array, create a card div element
+// Use two divs for each card for styling, an inner and outer div
+// Add the emoji to the inner card div
+// Append the card div to the table div
+
+function dealCards() {
+  const table = document.getElementById('table');
+  table.innerHTML = '';
+  const emojis = createCardGroup();
+  emojis.forEach((emoji) => {
+    const card = document.createElement('div');
+    card.innerHTML =
+      "<div class='card'>" +
+      "<div class='card_content'>" +
+      emoji +
+      "</div>" +
+      "</div>";
+
+    table.appendChild(card);
+  });
+}
+
+
+// Guess the cards by clicking on them
+// Add an event listener to each card div to listen for a click event
+// When a card is clicked, the card will be flipped over to reveal the emoji
+// Create a function to flip the card
+// In the function, add a class to the card div to flip it over
+// Add the styling to flip the card using CSS 'card.revealed'
+// Call this function when a card is clicked in the event listener
+
+function reveal() {
+  this.classList.add("revealed");
+}
+
+dealCards();
+
+document.querySelectorAll('.card').forEach((card) => {
+  card.addEventListener('click', reveal);
+});

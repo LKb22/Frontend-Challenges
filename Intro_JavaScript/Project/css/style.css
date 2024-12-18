@@ -1,0 +1,59 @@
+main {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh; /* Ensures full viewport height */
+}
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 80%; /* Limits the table's maximum width */
+  margin: auto; /* Centers the table horizontally */
+}
+
+.card {
+  width: 6rem;
+  height: 6rem;
+  margin: 0.5rem;
+  border-radius: 0.5em;
+  background-image: var(--gradient);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative; /* Allows absolute positioning of children */
+  transition: 0.3s;
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  backface-visibility: hidden; /* Prevents flickering */
+  transform-style: preserve-3d; /* Enables 3D transformations */
+}
+
+.card:hover {
+  transform: translateY(-5px) rotateZ(1deg); /* Shift slightly up and tilt */
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.card_content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  padding-top: 0.4rem;
+}
+
+.card.revealed {
+  transform: rotateY(-180deg);
+}

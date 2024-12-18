@@ -1,0 +1,18 @@
+:root {
+  --bg: #fafafa;
+  --font: "Archivo", sans-serif;
+  --font-display: "Archivo Narrow", sans-serif;
+  --red: red;
+  --orange: orange;
+  --gradient: linear-gradient(35deg, var(--orange), var(--red));
+}
+
+body {
+  margin: auto;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font);
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+}
