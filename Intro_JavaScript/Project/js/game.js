@@ -24,30 +24,33 @@
 // Reshuffle the array of emojis
 // Return the shuffled array of emojis
 
+
+// Function to create a shuffled deck of emoji cards
 function createCardGroup() {
-  const emojiRange = [0x1F600, 0x1F64F];
+  const emojiRange = [0x1F600, 0x1F64F]; // Unicode range for emojis
+
+  // Generate an array of emojis from the unicode range
   const emojiArray = Array.from(
     { length: emojiRange[1] - emojiRange[0] + 1 },
     (_, i) => String.fromCodePoint(emojiRange[0] + i)
   );
 
+  // Fisher-Yates Shuffle Algorithm
   const fisherYatesShuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+      [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-  }
+  };
 
-  const shuffledEmojis = fisherYatesShuffle(emojiArray);
-  const selectedEmojis = shuffledEmojis.slice(0, 15);
+  // Shuffle and select 15 random emojis
+  const selectedEmojis = fisherYatesShuffle(emojiArray).slice(0, 15);
+
+  // Duplicate and reshuffle the emojis for the matching game
   const duplicatedEmojis = [...selectedEmojis, ...selectedEmojis];
-  const finalShuffledEmojis = fisherYatesShuffle(duplicatedEmojis);
-
-  return finalShuffledEmojis
+  return fisherYatesShuffle(duplicatedEmojis);
 }
-console.log(createCardGroup());
-
 
 // Deal the cards
 // Create a function to deal the cards
@@ -58,25 +61,32 @@ console.log(createCardGroup());
 // For each emoji in the array, create a card div element
 // Use two divs for each card for styling, an inner and outer div
 // Add the emoji to the inner card div
+// Use template literals for multi-line string interpolation
+// Add the data-value attribute to the card div to store the emoji value, so we can check for matches later on
 // Append the card div to the table div
-
+// Function to deal the cards to the table
 function dealCards() {
   const table = document.getElementById('table');
-  table.innerHTML = '';
+  table.innerHTML = ''; // Clear existing cards
+
   const emojis = createCardGroup();
   emojis.forEach((emoji) => {
     const card = document.createElement('div');
-    card.innerHTML =
-      "<div class='card'>" +
-      "<div class='card_content'>" +
-      emoji +
-      "</div>" +
-      "</div>";
-
+    card.innerHTML = `
+      <div class='card' data-value='${emoji}'>
+        <div class='card_content'>
+          ${emoji}
+        </div>
+      </div>
+    `;
     table.appendChild(card);
   });
-}
 
+  // Add click event listener to each card
+  document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('click', flip);
+  });
+}
 
 // Guess the cards by clicking on them
 // Add an event listener to each card div to listen for a click event
@@ -86,12 +96,80 @@ function dealCards() {
 // Add the styling to flip the card using CSS 'card.revealed'
 // Call this function when a card is clicked in the event listener
 
-function reveal() {
-  this.classList.add("revealed");
+// Check the guess for a match
+// First one card is flipped
+// Then, the second card is flipped
+// No more than two unmatched cards can be flipped at a time
+// So, we need to check if only one or two unmatched cards have been flipped
+// Create a variable to track the unmatched, flipped cards
+// Check if more than one unmatched card is flipped
+// If so, stop further actions (no additional cards can be flipped) until the two flipped cards are checked for a match
+// If not/only one card is flipped, allow the user to flip another card
+// Function to handle card flipping
+function flip() {
+  // Get all currently revealed cards that are not yet marked as correct
+  const totalFlipped = document.querySelectorAll('.revealed:not(.correct)');
+  console.log("Currently flipped cards:", totalFlipped);
+
+  // If two cards are already revealed, do nothing
+  if (totalFlipped.length > 1) {
+    console.log("Two cards already revealed, waiting...");
+    return;
+  }
+
+  // Reveal the clicked card
+  this.classList.add('revealed');
+  console.log("Card flipped:", this);
+
+  // Re-check the flipped cards after the new one is revealed
+  const updatedFlipped = document.querySelectorAll('.revealed:not(.correct)');
+  console.log("Updated flipped cards:", updatedFlipped);
+
+  // If two cards are revealed, compare them
+  if (updatedFlipped.length === 2) {
+    console.log("Two cards flipped. Comparing...");
+    compare(updatedFlipped);
+  }
 }
 
-dealCards();
 
-document.querySelectorAll('.card').forEach((card) => {
-  card.addEventListener('click', reveal);
-});
+// Compare the two flipped cards for a match
+// Create a function to check for a match
+// The array of flipped cards contains two cards
+// Compare the cards by their indexes and data-value attributes
+// If the cards match, mark them as matched with another function
+// If the cards do not match, flip them back over with another function
+// The array is a function scope variable, so we cannot access it outside of the function
+// Call the function and pass it the array as an arguement in the flip function
+// Function to compare two flipped cards
+function compare(totalFlipped) {
+  const [card1, card2] = totalFlipped;
+  const value1 = card1.dataset.value;
+  const value2 = card2.dataset.value;
+
+  console.log("Card 1 value:", value1);
+  console.log("Card 2 value:", value2);
+
+  if (value1 === value2) {
+    console.log("Match found!");
+    totalFlipped.forEach((card) => {
+      card.classList.add('correct');
+      card.classList.remove('revealed');
+    });
+  } else {
+    console.log("No match!");
+    totalFlipped.forEach((card) => {
+      card.classList.add('incorrect');
+    });
+
+    // Flip cards back after a short delay
+    setTimeout(() => {
+      totalFlipped.forEach((card) => {
+        card.classList.remove('revealed', 'incorrect');
+      });
+    }, 1000);
+  }
+}
+
+// Initialize the game
+dealCards();
