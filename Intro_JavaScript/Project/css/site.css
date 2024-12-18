@@ -7,6 +7,12 @@
   --gradient: linear-gradient(35deg, var(--orange), var(--red));
 }
 
+* {
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 5px;
+}
+
 body {
   margin: auto;
   min-height: 100vh;
@@ -15,4 +21,5 @@ body {
   font-size: 2rem;
   display: flex;
   flex-direction: column;
+  background-color: rgba(255, 136, 0, 0.205);
 }

@@ -1,3 +1,79 @@
+/* Welcome page */
+/* Welcome div */
+.welcome {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+/* Welcome visibility */
+.welcome.visible{
+  display: flex;
+}
+/* Welcome h1 */
+.welcome h1 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 5rem;
+  margin-top: 0;
+}
+/* Welcome buttons */
+.welcome-buttons {
+  display: flex;
+}
+/* Welcome button */
+.welcome button {
+  padding: 1rem 3rem;
+  margin: 0 1rem;
+  min-width: 20rem;
+}
+
+/* Header */
+.header {
+  padding: 0.5rem 2rem;
+  background: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+/* Header title */
+.header-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+/* Header number */
+.header-num {
+  font-family: var(--font-display);
+  color: var(--hotpink);
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 0.9;
+}
+
+/* Header Counters div */
+.counter {
+  display: flex;
+}
+/* Header Counters counter-item div */
+.counter-item {
+  margin-right: 2rem;
+}
+
+/* Main */
 main {
   display: flex;
   flex-grow: 1;
@@ -7,6 +83,7 @@ main {
   min-height: 100vh; /* Ensures full viewport height */
 }
 
+/* Cards Tables */
 .table {
   display: flex;
   flex-wrap: wrap;
@@ -17,6 +94,7 @@ main {
   margin: auto; /* Centers the table horizontally */
 }
 
+/* Cards */
 .card {
   width: 6rem;
   height: 6rem;
@@ -30,12 +108,12 @@ main {
   backface-visibility: hidden; /* Prevents flickering */
   transform-style: preserve-3d; /* Enables 3D transformations */
 }
-
+/* Cards hover */
 .card:hover {
   transform: translateY(-5px) rotateZ(1deg); /* Shift slightly up and tilt */
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.25);
 }
-
+/* Cards content */
 .card_content {
   position: absolute;
   left: 0;
@@ -53,11 +131,13 @@ main {
   font-size: 2.5rem;
   padding-top: 0.4rem;
 }
-
+/* Cards click logic */
 .card.revealed {
   transform: rotateY(-180deg);
 }
 
+/* Matching logic */
+/* Incorrect keyframes */
 @keyframes incorrect {
   10%, 90% {
     transform: rotateY(-180deg) translate(-1px);
@@ -72,7 +152,7 @@ main {
     transform: rotateY(-180deg) translate(4px);
   }
 }
-
+/* Correct keyframes*/
 @keyframes correct {
   from {
     transform: rotateY(-180deg) scale3d(1, 1, 1);
@@ -87,15 +167,141 @@ main {
     opacity: 0;
   }
 }
-
+/* Incorrect */
 .incorrect {
   animation: incorrect 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
-
+/* Correct*/
 .correct {
   animation: correct 1.3s ease-in-out forwards;
 }
-
+/* Correct cards logic */
 .correct .card_content {
   pointer-events: none;
+}
+
+/* Game status messages */
+/* Hide */
+.level-up,
+.game-over,
+.end-game {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: var(--gradient);
+}
+/* Show */
+.level-up.visible,
+.game-over.visible,
+.end-game.visible{
+  display: flex;
+}
+/* Message styling */
+/* Modal */
+.modal {
+  background: white;
+  padding: 3rem 3rem 1rem;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* Modal Headings */
+.modal h2 {
+  color: var(--orange);
+  font-family: var(--font-display);
+  margin: 0;
+}
+/* Modal paragraphs */
+.modal p {
+  font-size: 1.5rem;
+}
+
+/* Buttons */
+/* All buttons */
+button {
+  cursor: pointer;
+  border: 0;
+  background-image: var(--gradient);
+  padding: 0.75rem 4rem;
+  border-radius: 5rem;
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: 0.3s;
+}
+/* All buttons hover */
+button:hover,
+button:focus {
+  opacity: 0.9;
+  outline: 0;
+}
+/* Modal buttons */
+.modal button {
+  margin: 3rem 0;
+}
+/* Restart button */
+.modal .restart {
+  color: var(--hotpink);
+  background: transparent;
+  border: 0;
+  text-transform: capitalize;
+  font-family: var(--font);
+  font-size: 1rem;
+  margin: 0;
+}
+/* Close levels menu button */
+.close-levels {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+/* Button visibility */
+.hidden-control{
+  display: none;
+}
+/* Level Selector */
+/* Level Selector div */
+.select-level{
+  background-color: var(--hotpink);
+  position: fixed;
+  width: 250px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(250px);
+  transition: transform .3s;
+  padding: 1rem 2rem;
+}
+/* Level Selector visibility */
+.select-level.visible{
+  transform: translateX(0);
+}
+/* Level Selector button */
+.select-level button{
+  background: transparent;
+  padding: 0;
+}
+/* Level Selector ul */
+.select-level ul{
+  list-style: none;
+  padding-left: 0;
+}
+/* Level Selector li */
+.select-level li{
+  margin-bottom: 1rem;
+  text-align: center;
 }
