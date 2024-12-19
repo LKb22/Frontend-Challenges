@@ -14,7 +14,6 @@ Create a deck of cards
     Return the shuffled emojis
 Create the other global variables
 */
-
 // Function to create a shuffled deck of emoji cards
 function createCardGroup() {
   const emojiRange = [0x1F600, 0x1F64F]; // Unicode range for emojis

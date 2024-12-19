@@ -29,7 +29,8 @@ function flip() {
 
   // Reveal the clicked card
   this.classList.add('revealed');
-  console.log("Card flipped. Total:", totalFlipped.length + 1, this);
+  console.log("Card flipped", this);
+  console.log("Total unmatched flipped:", totalFlipped.length + 1,)
 
   // Re-check the flipped cards after the new one is revealed
   const updatedFlipped = document.querySelectorAll('.revealed:not(.correct)');
