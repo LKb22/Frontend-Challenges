@@ -32,6 +32,14 @@ function flip() {
   console.log("Card flipped", this);
   console.log("Total unmatched flipped:", totalFlipped.length + 1,)
 
+  // Play the sound only for the first card in a pair
+  if (totalFlipped.length === 0) {
+    document
+      .querySelector("#sound-card")
+      .cloneNode()
+      .play();
+  }
+  
   // Re-check the flipped cards after the new one is revealed
   const updatedFlipped = document.querySelectorAll('.revealed:not(.correct)');
   console.log("Added card to flipped cards Array:", updatedFlipped);
@@ -40,5 +48,12 @@ function flip() {
   if (updatedFlipped.length === 2) {
     console.log("Comparing cards...");
     compare(updatedFlipped);
+    // Update the number of moves
+    updateCounter();
+  }
+
+  let remainingCards = document.querySelectorAll(".card:not(.correct)");
+  if (remainingCards.length === 0) {
+    setTimeout(levelCompleted, 1000);  // End the game if no unmatched cards are left
   }
 }
