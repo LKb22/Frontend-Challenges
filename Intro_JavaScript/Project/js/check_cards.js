@@ -21,11 +21,13 @@ function compare(totalFlipped) {
     console.log("Match found! Removing matched cards...");
     totalFlipped.forEach((card) => {
       card.classList.add('correct');
+      document.querySelector("#sound-correct").play();
     });
   } else {
     console.log("No match! Flipping back over...");
     totalFlipped.forEach((card) => {
       card.classList.add('incorrect');
+      document.querySelector("#sound-incorrect").play();
     });
 
     // Flip cards back after a short delay
