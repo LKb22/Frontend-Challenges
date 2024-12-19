@@ -30,9 +30,4 @@ function dealCards() {
     table.appendChild(card);
     console.log("Cards added", card.index);
   });
-
-  // Add click event listener to each card
-  document.querySelectorAll('.card').forEach((card) => {
-    card.addEventListener('click', flip);
-  });
 }

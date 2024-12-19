@@ -55,7 +55,7 @@ Create the maxCounter function to set the maximum number of moves for each level
     Use double digits
     Update the display
 */
-function maxCounter () {
+function maxCounter() {
   let maxMovesText = levels[currentLevel].maxMoves;
   /* Use double digits
   Use double digits for the max moves display
