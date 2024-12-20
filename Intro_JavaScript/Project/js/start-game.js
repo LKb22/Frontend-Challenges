@@ -7,24 +7,24 @@ document.querySelectorAll(".restart").forEach(function(element) {
 });
 
 document
-  .querySelector("#normal-game")
-  .addEventListener("click", startNormalGame);
+  .querySelector("#normal-mode")
+  .addEventListener("click", startNormalMode);
 document
-  .querySelector("#relax-game")
-  .addEventListener("click", startRelaxGame);
+  .querySelector("#relax-mode")
+  .addEventListener("click", startRelaxMode);
 
 document
   .querySelector("#level-control")
-  .addEventListener("click", showLevelMenu);
+  .addEventListener("click", showLevelsMenu);
 document
   .querySelector("#close-levels")
-  .addEventListener("click", hideLevelMenu);
+  .addEventListener("click", hideLevelsMenu);
 
-document.querySelectorAll(".level").forEach(function(element) {
+document.querySelectorAll(".levels").forEach(function(element) {
   element.addEventListener("click", changeLevel);
 });
 
-document.querySelector("#next").addEventListener("click", loadNewLevel);
+document.querySelector("#nextLevel").addEventListener("click", loadNewLevel);
 
 document.querySelector("body").addEventListener("click", clickOutsideMenu);
 
