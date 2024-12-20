@@ -69,4 +69,33 @@ function hideLevelsMenu() {
   document.querySelector(".select-level").classList.remove("visible");
 }
 
+/* Hide menu if user clicks outside of it
+Create a function to hide the menu if the user clicks outside of it
+  Check if the click occurred inside the menu
+    If so, do nothing
+  Otherwise, hide the menu
+*/
+// Create the click outside menu function
+function clickOutsideMenu(event) {
+  // Check if the click occurred inside the menu
+  if (event.target.closest(".select-level")) {
+    return; // Do nothing if the click was inside the menu
+  }
+  // Otherwise, hide the menu
+  document.querySelector(".select-level").classList.remove("visible");
+}
 
+/* Close the level menu when the escape key is pressed
+Create a function to close the level menu when the escape key is pressed
+  Log the key pressed for debugging purposes
+  If the escape key is pressed, hide the menu
+*/
+// Create the escape key function
+function escapeKeyClosesMenu(event) {
+  // Log the key pressed for debugging purposes
+  console.log(event.key);
+  // If the escape key is pressed, hide the menu
+  if (event.key === "Escape") {
+    hideLevelsMenu();
+  }
+}
