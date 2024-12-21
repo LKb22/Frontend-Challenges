@@ -23,14 +23,8 @@ function updateCounter() {
   let movesText;
   moves++;
   movesText = moves;
-  /* Add a move limit for eaach level
-  Add a move limit for each level
-    If the game is in game mode (not relax mode) and the number of moves exceeds the limit for the current level, game over
-    Use return to stop the game and prevent further actions
-    Otherwise, continue the game
-  */
-  if (moves > levels[currentLevel].maxMoves && !relaxMode) {
-    console.log("Game Over");
+
+  if (moves > levels[levelActual].movesMax && !modeRelax) {
     gameOver();
     return;
   }
@@ -43,11 +37,10 @@ function updateCounter() {
   */
   // Create the if statements
   if (moves < 10) {
-    movesText = `0${moves}`;
+    movesText = "0" + moves;
   }
-   // Update the moves in the display
-   document.querySelector("#moves").innerText = movesText;
-
+  document.querySelector("#mov").innerText = movesText;
+}
 /* Create the maxCounter function
 Create the maxCounter function to set the maximum number of moves for each level
   Add a move limit for each level
@@ -56,19 +49,9 @@ Create the maxCounter function to set the maximum number of moves for each level
     Update the display
 */
 function maxCounter() {
-  let maxMovesText = levels[currentLevel].maxMoves;
-  /* Use double digits
-  Use double digits for the max moves display
-    Handle the formatting for a double-digit display
-    If the moves are less than 10, add a leading zero
-    Use if statements to add the leading zero
-    Update the moves in the display using innerText
-  */
-  // Create the if statements
-  if (maxMovesText < 10) {
-    maxMovesText = `0${maxMovesText}`;
+  let movesMaxText = levels[levelActual].movesMax;
+  if (movesMaxText < 10) {
+    movesMaxText = "0" + movesMaxText;
   }
-   // Update the moves in the display
-   document.querySelector("#total-moves").innerText = maxMovesText;
-}
+  document.querySelector("#mov-total").innerText = movesMaxText;
 }
