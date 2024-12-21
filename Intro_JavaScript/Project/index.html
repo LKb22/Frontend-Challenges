@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>Guessing Game</title>
     <link
       href="https://fonts.googleapis.com/css?family=Archivo|Archivo+Narrow:400,600"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/Intro_JavaScript/Project/css/site.css" />
-    <link rel="stylesheet" href="/Intro_JavaScript/Project/css/style.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
   </head>
 
   <!-- Create a welcome page -->
@@ -20,11 +20,10 @@
     <div id="welcome" class="welcome">
       <h1>👋 Welcome! 👋</h1>
       <div class="welcome-buttons">
-        <button id="normal-mode">I want a challenge! 😎</button>
-        <button id="relaxed-mode">Relaxed mode 😌</button>
+        <button id="mode-normal">Game mode</button>
+        <button id="mode-relax">Relax mode</button>
       </div>
     </div>
-
     <!-- Create a header -->
     <header class="header">
       <!-- Create the game counter features -->
@@ -33,7 +32,7 @@
         <div class="counter-item">
           <h4 class="header-title">Moves</h4>
           <div class="header-num">
-            <span id="moves">00</span><span id="total-moves">/20</span>
+            <span id="mov">00</span>/<span id="mov-total">20</span>
           </div>
         </div>
         <!-- Create a stopwatch -->
@@ -45,26 +44,27 @@
         </div>
       </div>
       <!-- Create a level display -->
-      <div class="levels">
+      <div class="level">
         <h4 class="header-title">Level</h4>
-        <div class="header-num">
-          <span id="level">01</span>
-        </div>
+        <div class="header-num"><span id="level">01</span></div>
       </div>
       <!-- Create a level controller button -->
-      <button id="level-control" class="level-control">...</button>
+      <button id="control-level" class="control-level">...</button>
     </header>
-
+    <!-- main -->
     <main>
       <!-- Create the table of cards -->
       <div id="table" class="table"></div>
       <!-- Create the game status messages -->
       <!-- Create the level up message -->
-      <div id="levelUp" class="level-up">
+      <div id="nextLevel" class="next-level">
         <div class="modal">
-          <h2>Well done!</h2>
-          <button id="nextLevel">Next level</button>
-          <button class="restart">Restart</button>
+          <h2>Very good!</h2>
+          <button id="next">Next level</button>
+          <div class="modal-buttons">
+            <button class="restart">Restart</button>
+            <button class="menu">Menu</button>
+          </div>
         </div>
       </div>
       <!-- Create the out of moves message -->
@@ -72,7 +72,10 @@
         <div class="modal">
           <h2>Oh no!</h2>
           <p>You ran out of moves 😭</p>
-          <button class="restart">Restart</button>
+          <div class="modal-buttons">
+            <button class="restart"><b>TRY AGAIN</b></button>
+            <button class="menu">Menu</button>
+          </div>
         </div>
       </div>
       <!-- Create the out of time message -->
@@ -80,56 +83,68 @@
         <div class="modal">
           <h2>Oh no!</h2>
           <p>You ran out of time 😭</p>
-          <button class="restart">Restart</button>
+          <div class="modal-buttons">
+            <button class="restart"><b>TRY AGAIN</b></button>
+            <button class="menu">Menu</button>
+          </div>
         </div>
       </div>
       <!-- Create the game complete message -->
       <div id="endGame" class="end-game">
         <div class="modal">
           <h2>Congratulations!</h2>
-          <p>You have completed all levels 🏆</p>
-          <button class="restart">Restart</button>
+          <p>You beat all the levels 🏆</p>
+          <div class="modal-buttons">
+            <button class="restart">Restart</button>
+            <button class="menu">Menu</button>
+          </div>
         </div>
       </div>
     </main>
     <!-- Create the game complete message -->
     <div class="select-level">
-      <button id="close-levels" class="close-levels">&times;</button>
+      <div Class="level-menu">
+        <button class="menu">Menu</button>
+        <button id="close-levels" class="close-levels">&times;</button>
+      </div>
       <ul></ul>
     </div>
+
     <!-- Add the audio files for sound effects -->
     <!-- Add the correct sound -->
     <audio
-      src="/Intro_JavaScript/Project/sounds/correct.mp3"
-      class="sound"
-      id="sound-correct"
-      preload="auto"
-    ></audio>
-    <!-- Add the incorrect sound -->
-    <audio
-      src="/Intro_JavaScript/Project/sounds/incorrect.mp3"
-      class="sound"
-      id="sound-incorrect"
-      preload="auto"
-    ></audio>
-    <!-- Add the click sound -->
-    <audio
-      src="/Intro_JavaScript/Project/sounds/card.mp3"
-      class="sound"
-      id="sound-card"
-      preload="auto"
-    ></audio>
+    src="/sounds/success.mp3"
+    class="sound"
+    id="sound-correct"
+    preload="auto"
+  ></audio>
+  <!-- Add the incorrect sound -->
+  <audio
+    src="/sounds/error.mp3"
+    class="sound"
+    id="sound-incorrect"
+    preload="auto"
+  ></audio>
+  <!-- Add the click sound -->
+  <audio
+    src="/sounds/card.mp3"
+    class="sound"
+    id="sound-card"
+    preload="auto"
+  ></audio>
+
     <!-- Add the javascript files -->
-    <script src="/Intro_JavaScript/Project/js/start-game.js"></script>
-    <script src="/Intro_JavaScript/Project/js/game.js"></script>
-    <script src="/Intro_JavaScript/Project/js/global-variables.js"></script>
-    <script src="/Intro_JavaScript/Project/js/deal-cards.js"></script>
-    <script src="/Intro_JavaScript/Project/js/flip-cards.js"></script>
-    <script src="/Intro_JavaScript/Project/js/check-cards.js"></script>
-    <script src="/Intro_JavaScript/Project/js/timer.js"></script>
-    <script src="/Intro_JavaScript/Project/js/counter.js"></script>
-    <script src="/Intro_JavaScript/Project/js/game-over.js"></script>
-    <script src="/Intro_JavaScript/Project/js/change-levels.js"></script>
-    <script src="/Intro_JavaScript/Project/js/level-menu.js"></script>
+    <script src="js/variables-globales.js"></script>
+    <script src="js/discover-compare.js"></script>
+    <script src="js/deck-deal.js"></script>
+    <script src="js/hit-miss.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/stopwatch.js"></script>
+    <script src="js/finish.js"></script>
+    <script src="js/level-changer.js"></script>
+    <script src="js/game-over.js"></script>
+    <script src="js/menu-levels.js"></script>
+    <script src="js/start.js"></script>
+    <script src="js/start-game.js"></script>
   </body>
 </html>

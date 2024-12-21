@@ -2,15 +2,15 @@
   --bg: #fafafa;
   --font: "Archivo", sans-serif;
   --font-display: "Archivo Narrow", sans-serif;
-  --red: red;
-  --orange: orange;
-  --gradient: linear-gradient(35deg, var(--orange), var(--red));
+  --hotpink: #e94057;
+  --orange: #f27121;
+  --green: rgba(0, 128, 0, 0.301);
+  --mainBackground: rgba(255, 68, 0, 0.103);
+  --gradient: linear-gradient(35deg, var(--orange), var(--hotpink));
 }
 
-* {
+*{
   box-sizing: border-box;
-  margin: 5px;
-  padding: 5px;
 }
 
 body {
@@ -18,8 +18,4 @@ body {
   min-height: 100vh;
   background: var(--bg);
   font-family: var(--font);
-  font-size: 2rem;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(255, 136, 0, 0.205);
 }

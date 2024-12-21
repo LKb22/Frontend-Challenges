@@ -1,3 +1,11 @@
+body {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--mainBackground);
+}
+
 /* Welcome page */
 /* Welcome div */
 .welcome {
@@ -7,15 +15,16 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: white;
+  background: var(--green);
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Center content by default */
   text-align: center;
   z-index: 1;
+  padding-top: 4.5rem; /* Add padding to the top */
 }
 /* Welcome visibility */
-.welcome.visible{
+.welcome.visible {
   display: flex;
 }
 /* Welcome h1 */
@@ -25,21 +34,88 @@
   font-size: 5rem;
   margin-top: 0;
 }
+/* Adjust h1 and layout for smaller screens (Smartphones) */
+@media (max-width: 480px) {
+  .welcome h1 {
+    font-size: 2.5rem;
+  }
+
+  .welcome {
+    justify-content: flex-start; /* Shift content toward the top */
+    padding-top: 8rem; /* Adjust padding for spacing */
+  }
+}
+/* Adjust h1 and layout for medium screens (Tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .welcome h1 {
+    font-size: 3.5rem;
+  }
+
+  .welcome {
+    justify-content: flex-start;
+    padding-top: 8rem; /* More padding for tablets */
+  }
+}
+/* Adjust h1 and layout for slightly larger screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .welcome h1 {
+    font-size: 6rem;
+  }
+
+  .welcome {
+    justify-content: flex-start;
+    padding-top: 10rem; /* Adjust padding for screens slightly larger than tablets */
+  }
+}
 /* Welcome buttons */
 .welcome-buttons {
   display: flex;
+  justify-content: center;
+  gap: 1rem; /* Add spacing between buttons */
 }
 /* Welcome button */
 .welcome button {
   padding: 1rem 3rem;
-  margin: 0 1rem;
+  margin: 0;
   min-width: 20rem;
+}
+/* Stack buttons vertically for smaller screens (Smartphones) */
+@media (max-width: 480px) {
+  .welcome-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcome button {
+    width: 80%; /* Adjust button width to fit screen */
+    min-width: unset;
+  }
+}
+/* Adjust button layout for medium screens (Tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .welcome-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcome button {
+    width: 60%; /* Adjust button width to fit screen */
+  }
+}
+/* Adjust button layout for slightly larger screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .welcome-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .welcome button {
+    width: 50%; /* Slightly smaller width for larger screens */
+  }
 }
 
 /* Header */
 .header {
   padding: 0.5rem 2rem;
-  background: white;
+  background: var(--green);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
@@ -60,12 +136,15 @@
   font-family: var(--font-display);
   color: var(--hotpink);
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 0.9;
 }
-
+/* Target the header when the welcome page is visible to hide its display */
+.welcome.visible ~ .header {
+  display: none;
+}
 /* Header Counters div */
-.counter {
+.counters {
   display: flex;
 }
 /* Header Counters counter-item div */
@@ -75,12 +154,11 @@
 
 /* Main */
 main {
-  display: flex;
   flex-grow: 1;
+  display: flex;
   justify-content: center;
-  align-items: center;
   position: relative;
-  min-height: 100vh; /* Ensures full viewport height */
+  background: var(--mainBackground);
 }
 
 /* Cards Tables */
@@ -90,8 +168,13 @@ main {
   align-items: center;
   align-content: center;
   justify-content: center;
-  width: 80%; /* Limits the table's maximum width */
-  margin: auto; /* Centers the table horizontally */
+  max-width: 80%; /* Limits the table's maximum width */
+  margin: auto; /* Auto calculate left and right margins equally to center */
+  padding-top: 25px;
+}
+
+.table.hidden {
+  display: none;
 }
 
 /* Cards */
@@ -99,10 +182,10 @@ main {
   width: 6rem;
   height: 6rem;
   margin: 0.5rem;
-  border-radius: 0.5em;
+  border-radius: 0.3em;
   background-image: var(--gradient);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
-  position: relative; /* Allows absolute positioning of children */
+  position: relative;  /* Allows absolute positioning of emojis in .card_content */
   transition: 0.3s;
   cursor: pointer; /* Changes cursor to pointer on hover */
   backface-visibility: hidden; /* Prevents flickering */
@@ -114,8 +197,8 @@ main {
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.25);
 }
 /* Cards content */
-.card_content {
-  position: absolute;
+.card__content {
+  position: absolute; /* For absolute positioning of emojis */
   left: 0;
   right: 0;
   top: 0;
@@ -131,29 +214,37 @@ main {
   font-size: 2.5rem;
   padding-top: 0.4rem;
 }
+/* Make the card content visible when the card is flipped */
+.card__content::selection {
+  background: transparent;
+}
 /* Cards click logic */
-.card.revealed {
+.discovered {
   transform: rotateY(-180deg);
 }
-
 /* Matching logic */
 /* Incorrect keyframes */
-@keyframes incorrect {
-  10%, 90% {
-    transform: rotateY(-180deg) translate(-1px);
+@keyframes error {
+  10%,
+  90% {
+    transform: rotateY(-180deg) translateX(-1px);
   }
-  20%, 80% {
-    transform: rotateY(-180deg) translate(2px);
+  20%,
+  80% {
+    transform: rotateY(-180deg) translateX(2px);
   }
-  30%, 50%, 70% {
-    transform: rotateY(-180deg) translate(-4px);
+  30%,
+  50%,
+  70% {
+    transform: rotateY(-180deg) translateX(-4px);
   }
-  40%, 60% {
-    transform: rotateY(-180deg) translate(4px);
+  40%,
+  60% {
+    transform: rotateY(-180deg) translateX(4px);
   }
 }
 /* Correct keyframes*/
-@keyframes correct {
+@keyframes success {
   from {
     transform: rotateY(-180deg) scale3d(1, 1, 1);
     opacity: 1;
@@ -167,22 +258,22 @@ main {
     opacity: 0;
   }
 }
-/* Incorrect */
-.incorrect {
-  animation: incorrect 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-}
 /* Correct*/
 .correct {
-  animation: correct 1.3s ease-in-out forwards;
+  pointer-events: none;
 }
 /* Correct cards logic */
-.correct .card_content {
-  pointer-events: none;
+.correct .card__content {
+  animation: success 1.3s ease-in-out forwards;
+}
+/* Incorrect */
+.error {
+  animation: error 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
 /* Game status messages */
 /* Hide */
-.level-up,
+.next-level,
 .game-over,
 .end-game {
   display: none;
@@ -194,7 +285,7 @@ main {
   background-image: var(--gradient);
 }
 /* Show */
-.level-up.visible,
+.next-level.visible,
 .game-over.visible,
 .end-game.visible{
   display: flex;
@@ -223,6 +314,9 @@ main {
 .modal p {
   font-size: 1.5rem;
 }
+.modal button {
+  margin: 1rem 0;
+}
 
 /* Buttons */
 /* All buttons */
@@ -247,11 +341,13 @@ button:focus {
   outline: 0;
 }
 /* Modal buttons */
-.modal button {
-  margin: 3rem 0;
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 /* Restart button */
-.modal .restart {
+.modal .restart, .menu {
   color: var(--hotpink);
   background: transparent;
   border: 0;
@@ -260,19 +356,33 @@ button:focus {
   font-size: 1rem;
   margin: 0;
 }
-/* Close levels menu button */
-.close-levels {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 2rem;
-  font-family: sans-serif;
-  font-weight: 300;
-}
-/* Button visibility */
-.hidden-control{
+
+.sound{
   display: none;
 }
+
+.stopwatch-hidden{
+  display: none;
+}
+
+.control-level{
+  position: absolute;
+  font-size: .8rem;
+  top: 2.9rem;
+  right: .5rem;
+  padding: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: .68rem;
+  display: flex;
+  justify-content: center;
+  background: var(--hotpink);
+}
+
+.control-hidden{
+  display: none;
+}
+
 /* Level Selector */
 /* Level Selector div */
 .select-level{
@@ -304,4 +414,32 @@ button:focus {
 .select-level li{
   margin-bottom: 1rem;
   text-align: center;
+}
+/* Close levels menu button */
+.close-levels{
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+
+.level-menu .menu {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000; /* Ensure it's above other elements */
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.level-menu .menu:hover {
+  background: var(--orange);
 }
