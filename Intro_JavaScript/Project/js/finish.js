@@ -56,3 +56,12 @@ const restart = () => {
   // Start the game again
   start();
 };
+
+/* Rest to welcome function
+*/
+// reset to welcome function
+const resetToWelcome = () => {
+  ["#endGame", "#timeOver", "#gameOver", "#nextLevel"].forEach(selector => {
+    document.querySelector(selector).classList.remove("visible");
+  });
+};

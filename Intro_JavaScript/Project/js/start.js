@@ -29,7 +29,7 @@ Create the start function to initialize the game
   Toggle the header visibility for the weclome page and cards table
 */
 // Create the start function to initialize the game
-const start = () =>{
+const start = () => {
   // Set the move counter to 0
   moves = 0;
   // Set the move display to 00
@@ -39,9 +39,10 @@ const start = () =>{
   // Call the maxCounter() function
   maxCounter();
   // Hide the welcome page, menu, and modals
-  ["#welcome", ".select-level", "#endGame", "#timeOver", "#gameOver", "#nextLevel"].forEach(selector => {
+  ["#welcome", ".select-level"].forEach(selector => {
     document.querySelector(selector).classList.remove("visible");
   });
+  resetToWelcome();
   // Show the table
   document.querySelector("#table").classList.remove("hidden");
   // Add click event listener to each card
