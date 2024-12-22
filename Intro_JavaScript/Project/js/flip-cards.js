@@ -1,59 +1,66 @@
-/* Guess the cards
-Guess the cards by clicking on them
-  Add an event listener to each card div to listen for a click event
-  When a card is clicked, the card will be flipped over to reveal the emoji
-  Create a function to flip the card
-  In the function, add a class to the card div to flip it over
-  Add the styling to flip the card using CSS 'card.revealed'
-  Call this function when a card is clicked in the event listener
-  Check the guess for a match
-  First one card is flipped
-  Then, the second card is flipped
-  No more than two unmatched cards can be flipped at a time
-  So, we need to check if only one or two unmatched cards have been flipped
-  Create a variable to track the unmatched, flipped cards
-  Check if more than one unmatched card is flipped
-  If so, stop further actions (no additional cards can be flipped) until the two flipped cards are checked for a match
-  If not/only one card is flipped, allow the user to flip another card
-*/
-// Function to handle card flipping
-function flip() {
+function discover() {
+  let opened;
+  let cardsPending;
   // Get all currently revealed cards that are not yet marked as correct
-  const totalFlipped = document.querySelectorAll('.revealed:not(.correct)');
-  console.log("Card clicked.");
-
-  // If two cards are already revealed, do nothing
-  if (totalFlipped.length > 1) {
+  let totalOpened = document.querySelectorAll(
+    ".discovered:not(.correct)"
+  );
+  // Log the click event
+  console.log("Card clicked!");
+  // If two cards are already opened, do nothing
+  if (totalOpened.length > 1) {
     return;
   }
-
-  // Reveal the clicked card
-  this.classList.add('revealed');
+  // Reveal the clicked card by adding the "discovered" class to flip it
+  this.classList.add("discovered");
+  // Log the flipped card and the total number of unmatched flipped cards
   console.log("Card flipped", this);
-  console.log("Total unmatched flipped:", totalFlipped.length + 1,)
-
-  // Play the sound only for the first card in a pair
-  if (totalFlipped.length === 0) {
+  console.log("Total unmatched flipped:", totalOpened.length + 1,);
+  // Play the card click sound for only the first card in a pair
+  if (totalOpened.length === 0) {
     document
       .querySelector("#sound-card")
       .cloneNode()
       .play();
   }
-  
-  // Re-check the flipped cards after the new one is revealed
-  const updatedFlipped = document.querySelectorAll('.revealed:not(.correct)');
-  console.log("Added card to flipped cards Array:", updatedFlipped);
-
-  // If two cards are revealed, compare them
-  if (updatedFlipped.length === 2) {
-    console.log("Comparing cards...");
-    compare(updatedFlipped);
-    // Update the number of moves
-    updateCounter();
+  // If less than two unmatched cards are flipped, do nothing (do not proceed to compare)
+  // Get all currently revealed cards that are not yet marked as correct
+  opened = document.querySelectorAll(".discovered:not(.correct)");
+  // If less than two unmatched cards are flipped, do nothing
+  if (opened.length < 2) {
+    return;
   }
+  // Else, compare the two flipped cards
+  // Log the card comparison
+  console.log("Comparing cards:", opened);
+  // Call the compare function to compare the two flipped cards
+  compare(opened);
+  // Update the counter (one move is made after every two cards are flipped)
+  updateCounter();
+  // Get all currently revealed cards that are not yet marked as correct
+  cardsPending = document.querySelectorAll(".card:not(.correct)");
+  // If all cards are matched, finish the game
+  if (cardsPending.length === 0) {
+    setTimeout(finish, 1000);
+  }
+}
 
-  let remainingCards = document.querySelectorAll(".card:not(.correct)");
-  if (remainingCards.length === 0) {
-    setTimeout(levelCompleted, 1000);  // End the game if no unmatched cards are left
+/* Function to compare two flipped cards
+Create a function to compare the two flipped cards.
+  The function should take an array of two flipped cards as an argument (opened)
+  If the two flipped cards are the same, pass them to the success function.
+  Else, pass them to the error function.
+*/
+// Compare function
+function compare(cardsCompare) {
+  // Get the cards by their index and compare them using the "valor" attribute
+  if (
+    cardsCompare[0].dataset.valor === cardsCompare[1].dataset.valor
+  ) {
+    // Same - success
+    success(cardsCompare);
+    // Else - error
+  } else {
+    error(cardsCompare);
   }
 }
