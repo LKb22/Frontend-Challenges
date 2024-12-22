@@ -1,34 +1,43 @@
-// Dynamically write the levels
+/* Add all of the game's logic to the frontend
+  Call the writeLevels function to create the levels
+  Add all of the functions to the frontend for the game to work
+    Select and assign click events to the buttons
+    Add all of the respective functions
+*/
+// Call the writeLevels function to create the levels
 writeLevels();
+// Initialize normal mode
+document
+  .querySelector("#mode-normal")
+  .addEventListener("click", initiateModeNormal);
+// Initialize relax mode
+document
+  .querySelector("#mode-relax")
+  .addEventListener("click", initiateModeRelax);
+// Initialize the open levels menu
+document
+  .querySelector("#control-level")
+  .addEventListener("click", sampleMenuLevels);
+// Initialize the close levels menu
+document
+  .querySelector("#close-levels")
+  .addEventListener("click", hideMenuLevels);
+// Initialize the change levels function
+document
+  .querySelectorAll(".level").forEach(function(element) {
+  element.addEventListener("click", changeLevel);
+});
+// Initialize the next level function
+document.querySelector("#next").addEventListener("click", loadNewLevel);
+// Initialize the close menu on click outside function
+document.querySelector("body").addEventListener("click", clickOutOfMenu);
+// Initialize the close menu on escape key function
+document.addEventListener("keydown", EscKeyCloseMenu);
+// Show the welcome screen on page load
+document.querySelector("#welcome").classList.add("visible");
+
 
 // Assign initial events
 document.querySelectorAll(".restart").forEach(function(element) {
   element.addEventListener("click", restart);
 });
-
-document
-  .querySelector("#normal-mode")
-  .addEventListener("click", startNormalMode);
-document
-  .querySelector("#relax-mode")
-  .addEventListener("click", startRelaxMode);
-
-document
-  .querySelector("#level-control")
-  .addEventListener("click", showLevelsMenu);
-document
-  .querySelector("#close-levels")
-  .addEventListener("click", hideLevelsMenu);
-
-document.querySelectorAll(".levels").forEach(function(element) {
-  element.addEventListener("click", changeLevel);
-});
-
-document.querySelector("#nextLevel").addEventListener("click", loadNewLevel);
-
-document.querySelector("body").addEventListener("click", clickOutsideMenu);
-
-document.addEventListener("keydown", escapeKeyClosesMenu);
-
-// Display the welcome screen
-document.querySelector("#welcome").classList.add("visible");
