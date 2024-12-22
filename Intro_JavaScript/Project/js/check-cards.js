@@ -1,40 +1,48 @@
-/* Check for a match
-Compare the two flipped cards for a match
-  Create a function to check for a match
-  The array of flipped cards contains two cards
-  Compare the cards by their indexes and data-value attributes
-  If the cards match, mark them as matched with another function
-  If the cards do not match, flip them back over with another function
-  The array is a function scope variable, so we cannot access it outside of the function
-  Call the function and pass it the array as an arguement in the flip function
+/* Funciton for successful match
+Create a function to be called when a match is found
+  For both cards in the array of matched cards, add the class "correct"
+  Play the sound effect for a correct match
 */
-// Function to compare two flipped cards
-function compare(totalFlipped) {
-  const [card1, card2] = totalFlipped;
-  const value1 = card1.dataset.value;
-  const value2 = card2.dataset.value;
+// Success function
+function success(theCards) {
+  // Log the success
+  console.log("Match found! Removing matched cards...");
+  // Add the class "correct" to both cards in the array
+  theCards.forEach(function(element) {
+    element.classList.add("correct");
+  });
+  // Play the sound effect for a correct match
+  document.querySelector("#sound-correct").play();
+}
 
-  console.log("Card 1 value:", value1);
-  console.log("Card 2 value:", value2);
-
-  if (value1 === value2) {
-    console.log("Match found! Removing matched cards...");
-    totalFlipped.forEach((card) => {
-      card.classList.add('correct');
-      document.querySelector("#sound-correct").play();
+/* Function for unsuccessful match
+Create a function to be called when a match is not found
+  Log the error
+  For both cards in the array of matched cards, add the class "error"
+  Play the sound effect for an incorrect match
+  Flip cards back after a one second delay
+    Remove the class "discovered" from both cards
+    Remove the class "error" from both cards
+*/
+// Error function
+function error(theCards) {
+  // Log the error
+  console.log("No match! Flipping back over...");
+  // Add the class "error" to both cards in the array
+  theCards.forEach(function(element) {
+    element.classList.add("error");
+  });
+  // Play the sound effect for an incorrect match
+  document.querySelector("#sound-incorrect").play();
+  // Flip cards back after a one second delay using setTimeout
+  setTimeout(function() {
+    // For each card in the array
+    theCards.forEach(function(element) {
+      // Remove the class "discovered"
+      element.classList.remove("discovered");
+      // Remove the class "error"
+      element.classList.remove("error");
     });
-  } else {
-    console.log("No match! Flipping back over...");
-    totalFlipped.forEach((card) => {
-      card.classList.add('incorrect');
-      document.querySelector("#sound-incorrect").play();
-    });
-
-    // Flip cards back after a short delay
-    setTimeout(() => {
-      totalFlipped.forEach((card) => {
-        card.classList.remove('revealed', 'incorrect');
-      });
-    }, 1000);
-  }
+    // After one second delay
+  }, 1000);
 }
