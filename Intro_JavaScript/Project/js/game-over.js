@@ -16,15 +16,21 @@ function gameOver() {
   document.querySelector("#gameOver").classList.add("visible");
 }
 
-/* Level completed function
-Level completed function to add the level completed message
-  Check if the current level is the last level (use minus 1 to account for the zero-based array)
-  If not, select the levelUp element and add the visible class to display the message
-  If so, select the endGame element and add the visible class to display the message
+/* Funciton to end the game
+Create a function to end the game
+  Clear the stopwatch interval
+  If the current level is not the last level, show the "Next Level" button
+  Else, show the "End Game" button
 */
-function levelCompleted() {
-  if (currentLevel < levels.length - 1) {
-    document.querySelector("#levelUp").classList.add("visible");
+// End game function
+function finish() {
+  // Clear the stopwatch interval
+  clearInterval(stopwatch);
+  // Check if the current level is (not) the last
+  if (levelActual < levels.length - 1) {
+    // If not, add next level message
+    document.querySelector("#nextLevel").classList.add("visible");
+    // Else, if so, add end game message
   } else {
     document.querySelector("#endGame").classList.add("visible");
   }
