@@ -8,15 +8,15 @@ Create a dynamic level menu function to display the levels
     Append the button to the unordered list
 */
 // Create the dynamic level menu function
-function writeLevels() {
+const writeLevels = () => {
   // Select the unordered list inside the level menu
-  let menuLevels = document.querySelector(".select-level ul");
+  const menuLevels = document.querySelector(".select-level ul");
   // Loop through the levels array
-  levels.forEach(function(element, index) {
+  levels.forEach((element, index) => {
     // Create a new list item for the level
-    let controlLevel = document.createElement("li");
+    const controlLevel = document.createElement("li");
     // Create a new button for the level
-    let button = document.createElement("button");
+    const button = document.createElement("button");
     button.classList.add("level"); // Add the class 'level'
     button.setAttribute("data-level", index); // Set the data-level attribute
     button.textContent = `Level ${index + 1}`; // Set the button text
@@ -25,7 +25,8 @@ function writeLevels() {
     // Append the button to the unordered list
     menuLevels.appendChild(controlLevel);
   });
-}
+};
+
 /* Level change function
 Create a function to change the current level
   Retrieve the level number from the button data attribute
@@ -43,28 +44,30 @@ function changeLevel() {
   updateLevel();
   // Update the level display
   start();
-}
+};
+
 /* Show or hide the levels menu when clicked
 Create a function to show or hide the levels menu when clicked
   Prevent the level from propagating to the parent element
   Toggle the visible class to show or hide the menu
 */
 // Create the toggle levels function
-function sampleMenuLevels(event) {
+const sampleMenuLevels = (event) => {
   // Prevent the level from propagating to the parent element
   event.stopPropagation();
   // Toggle the visible class to show or hide the menu
   document.querySelector(".select-level").classList.toggle("visible");
-}
+};
+
 /* Hide the levels menu
 Create a function to hide the levels menu
   Remove the visible class to hide the menu
 */
 // Create the hide levels function
-function hideMenuLevels() {
+const hideMenuLevels = () => {
   // Remove the visible class to hide the menu
   document.querySelector(".select-level").classList.remove("visible");
-}
+};
 
 /* Hide menu if user clicks outside of it
 Create a function to hide the menu if the user clicks outside of it
@@ -73,26 +76,27 @@ Create a function to hide the menu if the user clicks outside of it
   Otherwise, hide the menu
 */
 // Create the click outside menu function
-function clickOutOfMenu(event) {
+const clickOutOfMenu = (event) => {
   // Check if the click occurred inside the menu
   if (event.target.closest(".select-level")) {
     // Do nothing if the click was inside the menu
     return;
-  }
+  };
   // Otherwise, hide the menu
   document.querySelector(".select-level").classList.remove("visible");
-}
+};
+
 /* Close the level menu when the escape key is pressed
 Create a function to close the level menu when the escape key is pressed
   Log the key pressed for debugging purposes
   If the escape key is pressed, hide the menu
 */
 // Create the escape key function
-function EscKeyCloseMenu(event) {
+const EscKeyCloseMenu = (event) => {
   // Log the key pressed for debugging purposes
   console.log(event.key);
   // If the escape key is pressed, hide the menu
   if (event.key === "Escape") {
     hideMenuLevels();
-  }
-}
+  };
+};

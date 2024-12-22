@@ -4,16 +4,16 @@ Create a function to be called when a match is found
   Play the sound effect for a correct match
 */
 // Success function
-function success(theCards) {
+const success = (theCards) => {
   // Log the success
   console.log("Match found! Removing matched cards...");
   // Add the class "correct" to both cards in the array
-  theCards.forEach(function(element) {
+  theCards.forEach(element => {
     element.classList.add("correct");
   });
   // Play the sound effect for a correct match
   document.querySelector("#sound-correct").play();
-}
+};
 
 /* Function for unsuccessful match
 Create a function to be called when a match is not found
@@ -25,19 +25,19 @@ Create a function to be called when a match is not found
     Remove the class "error" from both cards
 */
 // Error function
-function error(theCards) {
+const error = (theCards) => {
   // Log the error
   console.log("No match! Flipping back over...");
   // Add the class "error" to both cards in the array
-  theCards.forEach(function(element) {
+  theCards.forEach(element => {
     element.classList.add("error");
   });
   // Play the sound effect for an incorrect match
   document.querySelector("#sound-incorrect").play();
   // Flip cards back after a one second delay using setTimeout
-  setTimeout(function() {
+  setTimeout(() => {
     // For each card in the array
-    theCards.forEach(function(element) {
+    theCards.forEach(element => {
       // Remove the class "discovered"
       element.classList.remove("discovered");
       // Remove the class "error"
@@ -45,4 +45,4 @@ function error(theCards) {
     });
     // After one second delay
   }, 1000);
-}
+};

@@ -1,11 +1,16 @@
-function deckCards(theCards) {
-  let result;
+/* Function to create a deck of cards
+Create a function to create a deck of cards
+  Receive an array of cards
+  Duplicate the cards
+  Shuffle the cards
+*/
+// Function to create a deck of cards
+const deckCards = (theCards) => {
+  // Duplicate the cards
   const totalCards = theCards.concat(theCards);
-  result = totalCards.sort(function() {
-    return 0.5 - Math.random();
-  });
-  return result;
-}
+  // Shuffle the cards
+  return totalCards.sort(() => 0.5 - Math.random());
+  };
 
 /* Function to deal the cards
 Create a function to deal the cards
@@ -22,26 +27,26 @@ Create a function to deal the cards
     Log the cards added to the console
 */
 // Function to deal the cards
-function dealCards(theCards) {
-  // Access the tabel element
+const dealCards = (theCards) => {
+  // Access the table element
   const table = document.querySelector("#table");
   // Get an array of shuffled cards
-  let cardsShuffled = deckCards(theCards);
+  const cardsShuffled = deckCards(theCards);
   // Clear the table
   table.innerHTML = "";
   // Loop through the shuffled cards
-  cardsShuffled.forEach(function(element) {
+  cardsShuffled.forEach((element) => {
     // Create a div element
-    let card = document.createElement("div");
+    const card = document.createElement("div");
     // Add the class card for styling
     card.classList.add("card");
     // Add the data-valor attribute
     card.setAttribute("data-valor", element);
     // Create a child div element for the card content
-    let cardContent = document.createElement("div");
+    const cardContent = document.createElement("div");
     // Add the class card__content
     cardContent.classList.add("card__content");
-    // Add the text content(element) to the card content as plain text
+    // Add the text content (element) to the card content as plain text
     cardContent.textContent = element;
     // Append the card content to the card
     card.appendChild(cardContent);
@@ -50,4 +55,4 @@ function dealCards(theCards) {
     // Log the cards added to the console
     console.log("Cards added", card.index);
   });
-}
+};

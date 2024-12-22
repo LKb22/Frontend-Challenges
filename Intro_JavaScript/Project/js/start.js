@@ -29,7 +29,7 @@ Create the start function to initialize the game
   Toggle the header visibility for the weclome page and cards table
 */
 // Create the start function to initialize the game
-function start() {
+const start = () =>{
   // Set the move counter to 0
   moves = 0;
   // Set the move display to 00
@@ -45,7 +45,7 @@ function start() {
   // Show the table
   document.querySelector("#table").classList.remove("hidden");
   // Add click event listener to each card
-  document.querySelectorAll(".card").forEach(function(element) {
+  document.querySelectorAll(".card").forEach(element => {
     element.addEventListener("click", discover);
   });
   // If the game is not in relax mode
@@ -57,8 +57,8 @@ function start() {
     // Else, hide the timer
   } else {
     document.querySelector("#stopwatch").classList.add("stopwatch-hidden");
-  }
-}
+  };
+};
 
 /* Restart function
 Create the restart function to reset the game
@@ -67,14 +67,14 @@ Create the restart function to reset the game
   Start the game again
 */
 // Create the restart function to reset the game
-function restart() {
+const restart = () => {
   // Reset the current level to the first level
   levelActual = 0;
   // Update the level display
   updateLevel();
   // Start the game again
   start();
-}
+};
 
 /* Normal Mode
 Create the normal game mode function
@@ -83,14 +83,14 @@ Create the normal game mode function
   Start the game
 */
 // Create the normal game mode function
-function initiateModeNormal() {
+const initiateModeNormal = () => {
   // Set to normal mode
   modeRelax = false;
   // Hide the level control modal
   document.querySelector(".control-level").classList.add("control-hidden");
   // Start the game
   start();
-}
+};
 
 /* Relax Mode
 Create the relax game mode function
@@ -99,14 +99,14 @@ Create the relax game mode function
   Start the game
 */
 // Create the relax game mode function
-function initiateModeRelax() {
+const initiateModeRelax = () => {
   // Set to relax mode
   modeRelax = true;
   // Add the level control modal
   document.querySelector(".control-level").classList.remove("control-hidden");
   // Start the game
   start();
-}
+};
 
 /* Toggle header visibility
 Create the toggleHeaderVisibility function to toggle the header visibility
@@ -115,7 +115,7 @@ Create the toggleHeaderVisibility function to toggle the header visibility
   Else, show the header
 */
 // toggleHeaderVisibility function
-function toggleHeaderVisibility() {
+const toggleHeaderVisibility = () => {
   // Get the header and welcome page elements
   const header = document.querySelector('.header');
   const welcomePage = document.querySelector('.welcome');
@@ -125,5 +125,5 @@ function toggleHeaderVisibility() {
   // Else, show the header
   } else {
     header.classList.remove('header-hidden');
-  }
-}
+  };
+};

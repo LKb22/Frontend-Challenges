@@ -16,7 +16,7 @@ Create a countdown timer for each round of the game
 
 */
 // Create the start timer function
-function initiateStopwatch() {
+const initiateStopwatch = () => {
   // Seconds can start at 10
   let seconds = 10;
   // Minutes
@@ -27,7 +27,7 @@ function initiateStopwatch() {
   // Minutes
   let minutesText;
   // Create the update timer function
-  function updateStopwatch() {
+  const updateStopwatch = () => {
     // Decrement the seconds by 1
     seconds--;
     // If the seconds reach 0
@@ -38,7 +38,7 @@ function initiateStopwatch() {
       minutes--;
       // Log
       console.log("Minus 1 minute");
-    }
+    };
     // If the minutes reach less than 0
     if (minutes < 0) {
       // Reset the seconds and minutes to 0
@@ -50,7 +50,7 @@ function initiateStopwatch() {
       console.log("Time over");
       // Call the timeOver function
       timeOver();
-    }
+    };
     // Set the seconds and minutes to the text variables
     secondsText = seconds;
     minutesText = minutes;
@@ -60,12 +60,12 @@ function initiateStopwatch() {
     }
     if (minutes < 10) {
       minutesText = "0" + minutes;
-    }
+    };
     // Update the display
     // Update the inner text of the elements
     document.querySelector("#minutes").innerText = minutesText;
     document.querySelector("#seconds").innerText = secondsText;
-  }
+  };
   // Call the update timer function every second
   stopwatch = setInterval(updateStopwatch, 1000);
-}
+};

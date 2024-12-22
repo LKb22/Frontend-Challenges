@@ -13,12 +13,13 @@ Create a function to reset the level
   Call the updateLevel function to update the level text
 */
 // Level changer function
-function nextLevel() {
+const nextLevel = () => {
   // Increment the level by one
   levelActual++;
-}
+};
+
 // Update level function
-function updateLevel() {
+const updateLevel = () => {
   // If the level is less than 10, add a leading zero
   let levelText = levelActual + 1;
   if (levelText < 10) {
@@ -26,23 +27,25 @@ function updateLevel() {
   }
   // Update the level text to the current level
   document.querySelector("#level").innerText = levelText;
-}
+};
+
 // Load new level function
-function loadNewLevel() {
+const loadNewLevel = () => {
   // Call the nextLevel function to increment the level
   nextLevel();
   // Call the updateLevel function to update the level text
   updateLevel();
   // Call the start function to start the game
   start();
-}
+};
+
 // Reset level function
-function resetLevel() {
+const resetLevel = () => {
   // Set the level to 0
   levelActual = 0;
   // Call the updateLevel function to update the level text
   updateLevel();
-}
+};
 
 /* Function to go back to welcome screen
 Create a function to go back to the welcome screen when the menu button is clicked
@@ -50,7 +53,7 @@ Create a function to go back to the welcome screen when the menu button is click
 
 */
 // Back to welcome function
-function backToWelcome() {
+const backToWelcome = () => {
   // Select the welcome element
   const welcomeElement = document.querySelector("#welcome");
   // Add the class "visible" to the welcome element
@@ -68,7 +71,7 @@ function backToWelcome() {
   document.querySelector("#nextLevel").classList.remove("visible");
   // Add the class "hidden" to the table element
   document.querySelector("#table").classList.add("hidden");
-}
+};
 
 /* Menu buttons functionality
 Attach the back-to-welcome functionality to all ".menu" buttons
@@ -80,10 +83,10 @@ Attach the back-to-welcome functionality to all ".menu" buttons
 */
 // Menu buttons functionality
 // Select all the elements with the class "menu"
-document.querySelectorAll(".menu").forEach(function (element) {
+document.querySelectorAll(".menu").forEach(element => {
   // For each element with the class "menu"
   // Add an event listener for the click event
-  element.addEventListener("click", function (event) {
+  element.addEventListener("click", event => {
     // Log the element clicked
     console.log(element);
     console.log("Menu button clicked:", event.target);

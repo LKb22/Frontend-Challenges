@@ -19,7 +19,7 @@ Create a function to track and update the number of moves
   Increment the number of moves by one each time the function runs
   Update the display variable with the number of moves
 */
-function updateCounter() {
+const updateCounter = () => {
   // Initialize the number of moves variable
   let movesText;
   // Increment the number of moves by one each time the function runs
@@ -37,7 +37,7 @@ function updateCounter() {
     gameOver();
     // Exit the function
     return;
-  }
+  };
   /* Use double digits
   Use double digits for the moves display
     Handle the formatting for a double-digit display
@@ -49,10 +49,11 @@ function updateCounter() {
   // If the moves are less than 10, add a leading zero
   if (moves < 10) {
     movesText = "0" + moves;
-  }
+  };
   // Update the moves in the display using innerText
   document.querySelector("#mov").innerText = movesText;
-}
+};
+
 /* Create the maxCounter function
 Create the maxCounter function to set the maximum number of moves for each level
   Add a move limit for each level
@@ -61,13 +62,13 @@ Create the maxCounter function to set the maximum number of moves for each level
     Update the display
 */
 // Create the maxCounter function
-function maxCounter() {
+const maxCounter = () => {
   // Retrieve the maximum number of moves for the current level
   let movesMaxText = levels[levelActual].movesMax;
   // Use double digits if the number of moves is less than 10
   if (movesMaxText < 10) {
     movesMaxText = "0" + movesMaxText;
-  }
+  };
   // Update the display using innerText
   document.querySelector("#mov-total").innerText = movesMaxText;
-}
+};
