@@ -29,7 +29,7 @@ function updateCounter() {
   // Log the information to the console
   console.log("Current number of moves", moves);
   console.log("Relax mode activated?:", modeRelax);
-  console.log("Current level:", levels[levelActual]);
+  console.log("Current level:", levelActual + 1);
   console.log("Max moves allowed:", levels[levelActual].movesMax);
   // Limit the number of moves
   if (moves > levels[levelActual].movesMax && !modeRelax) {
