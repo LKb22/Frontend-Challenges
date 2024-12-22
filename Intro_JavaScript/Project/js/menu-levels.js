@@ -27,23 +27,31 @@ const writeLevels = () => {
   });
 };
 
-/* Level change function
-Create a function to change the current level
-  Retrieve the level number from the button data attribute
-  Update the current level to the selected level
-  Update the level display
-  Start the game with the new level
+/* Menu Button
+Function to go back to welcome screen
+Create a function to go back to the welcome screen when the menu button is clicked
+  Use the menu button in the modals and in the levels menu
+
 */
-// Create the level change function
-function changeLevel() {
-  // Retrieve the level number from the button data attribute
-  let level = parseInt(this.dataset.level);
-  // Update the current level to the selected level
-  levelActual = level;
-  // Update the level display
-  updateLevel();
-  // Update the level display
-  start();
+// Back to welcome function
+const backToWelcome = () => {
+  // Select the welcome element
+  const welcomeElement = document.querySelector("#welcome");
+  // Add the class "visible" to the welcome element
+  welcomeElement.classList.add("visible");
+  // Call the hideMenuLevels function to hide the levels menu
+  hideMenuLevels();
+  // Clear the interval for the stopwatch
+  clearInterval(stopwatch);
+  // Call the resetLevel function to reset the level to 0
+  resetLevel()
+  // Remove the class "visible" from the modals
+  document.querySelector("#gameOver").classList.remove("visible");
+  document.querySelector("#timeOver").classList.remove("visible");
+  document.querySelector("#endGame").classList.remove("visible");
+  document.querySelector("#nextLevel").classList.remove("visible");
+  // Add the class "hidden" to the table element
+  document.querySelector("#table").classList.add("hidden");
 };
 
 /* Show or hide the levels menu when clicked

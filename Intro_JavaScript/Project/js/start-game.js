@@ -45,7 +45,12 @@ document.addEventListener("keydown", EscKeyCloseMenu);
 // Show the welcome screen on page load
 document.querySelector("#welcome").classList.add("visible");
 
-// Assign initial events
+// Initialize the restart function
 document.querySelectorAll(".restart").forEach(element => {
   element.addEventListener("click", restart);
+});
+
+// Initialize the menu function
+document.querySelectorAll(".menu").forEach(element => {
+  element.addEventListener("click", backToWelcome);
 });
