@@ -8,7 +8,7 @@ Create the maxCounter function to set the maximum number of moves for each level
 // Create the maxCounter function
 const maxCounter = () => {
   // Retrieve the maximum number of moves for the current level
-  let movesMaxText = levels[levelActual].movesMax;
+  let movesMaxText = Game.levels[Game.levelActual].movesMax;
   // Use double digits if the number of moves is less than 10
   if (movesMaxText < 10) {
     movesMaxText = "0" + movesMaxText;

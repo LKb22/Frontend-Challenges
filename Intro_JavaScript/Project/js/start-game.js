@@ -31,7 +31,7 @@ Create the start function to initialize the game
 // Create the start function to initialize the game
 const start = () => {
   // Set the move counter to 0
-  moves = 0;
+  Game.moves = 0;
   // Set the move display to 00
   document.querySelector("#mov").innerText = "00";
   // Call the dealCards() function
@@ -50,7 +50,7 @@ const start = () => {
     element.addEventListener("click", discover);
   });
   // If the game is not in relax mode
-  if (!modeRelax) {
+  if (!Game.modeRelax) {
     // Start the timer
     initiateStopwatch();
     // Unhide the timer

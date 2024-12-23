@@ -20,7 +20,7 @@ Create a function to reset the level
 // Level changer function
 const nextLevel = () => {
   // Increment the level by one
-  levelActual++;
+  Game.levelActual++;
 };
 
 // Create the level change function
@@ -28,7 +28,7 @@ function changeLevel() {
   // Retrieve the level number from the button data attribute
   let level = parseInt(this.dataset.level);
   // Update the current level to the selected level
-  levelActual = level;
+  Game.levelActual = level;
   // Update the level display
   updateLevel();
   // Update the level display
@@ -38,7 +38,7 @@ function changeLevel() {
 // Update level function
 const updateLevel = () => {
   // If the level is less than 10, add a leading zero
-  let levelText = levelActual + 1;
+  let levelText = Game.levelActual + 1;
   if (levelText < 10) {
     levelText = `0${levelText}`;
   }
@@ -59,7 +59,7 @@ const loadNewLevel = () => {
 // Reset level function
 const resetLevel = () => {
   // Set the level to 0
-  levelActual = 0;
+  Game.levelActual = 0;
   // Call the updateLevel function to update the level text
   updateLevel();
 };

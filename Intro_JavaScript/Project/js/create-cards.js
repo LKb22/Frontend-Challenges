@@ -31,8 +31,8 @@ const groupCards = () => {
     console.log("Shuffled emojis:", shuffledEmojis.length);
 
     // Add another set of pairs for each level increase (use level index + 1)
-    const pairsRequired = (levelActual + 1) * 2;
-    console.log("Current level:", levelActual);
+    const pairsRequired = (Game.levelActual + 1) * 2;
+    console.log("Current level:", Game.levelActual);
     console.log("# of pairs:", pairsRequired);
     // Slice the array by this number to get the required number of emojis
     const selectedEmojis = shuffledEmojis.slice(0, pairsRequired);

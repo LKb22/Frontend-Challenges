@@ -9,7 +9,7 @@ const finish = () => {
   // Clear the stopwatch interval
   clearInterval(stopwatch);
   // Check if the current level is (not) the last
-  if (levelActual < levels.length - 1) {
+  if (Game.levelActual < Game.levels.length - 1) {
     // If not, add next level message
     document.querySelector("#nextLevel").classList.add("visible");
     // Else, if so, add end game message

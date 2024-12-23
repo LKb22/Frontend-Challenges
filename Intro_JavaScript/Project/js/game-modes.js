@@ -7,7 +7,7 @@ Create the normal game mode function
 // Create the normal game mode function
 const initiateModeNormal = () => {
   // Set to normal mode
-  modeRelax = false;
+  Game.modeRelax = false;
   // Hide the level control modal
   document.querySelector(".control-level").classList.add("control-hidden");
   // Start the game
@@ -23,7 +23,7 @@ Create the relax game mode function
 // Create the relax game mode function
 const initiateModeRelax = () => {
   // Set to relax mode
-  modeRelax = true;
+  Game.modeRelax = true;
   // Add the level control modal
   document.querySelector(".control-level").classList.remove("control-hidden");
   // Start the game

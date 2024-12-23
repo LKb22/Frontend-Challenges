@@ -12,7 +12,7 @@ const writeLevels = () => {
   // Select the unordered list inside the level menu
   const menuLevels = document.querySelector(".select-level ul");
   // Loop through the levels array
-  levels.forEach((element, index) => {
+  Game.levels.forEach((element, index) => {
     // Create a new list item for the level
     const controlLevel = document.createElement("li");
     // Create a new button for the level

@@ -7,7 +7,7 @@ Create the restart function to reset the game
 // Create the restart function to reset the game
 const restart = () => {
   // Reset the current level to the first level
-  levelActual = 0;
+  Game.levelActual = 0;
   // Update the level display
   updateLevel();
   // Start the game again

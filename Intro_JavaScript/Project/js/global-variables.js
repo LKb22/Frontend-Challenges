@@ -1,11 +1,8 @@
-let modeRelax = false;
-let moves = 0;
-let stopwatch;
-let levelActual = 0;
-
-
-
-  const levels = [
+const Game = {
+  modeRelax: false,
+  moves: 0,
+  levelActual: 0,
+  levels: [
     {
       movesMax: 10
     },
@@ -36,4 +33,5 @@ let levelActual = 0;
     {
       movesMax: 55
     }
-  ];
+  ],
+};
