@@ -1,17 +1,3 @@
-/* Function to create a deck of cards
-Create a function to create a deck of cards
-  Receive an array of cards
-  Duplicate the cards
-  Shuffle the cards
-*/
-// Function to create a deck of cards
-const deckCards = (theCards) => {
-  // Duplicate the cards
-  const totalCards = theCards.concat(theCards);
-  // Shuffle the cards
-  return totalCards.sort(() => 0.5 - Math.random());
-  };
-
 /* Function to deal the cards
 Create a function to deal the cards
   Select the table element
@@ -27,12 +13,12 @@ Create a function to deal the cards
     Log the cards added to the console
 */
 // Function to deal the cards
-const dealCards = (theCards) => {
+const dealCards = () => {
   // Access the table element
   const table = document.querySelector("#table");
-  // Get an array of shuffled cards
-  const cardsShuffled = deckCards(theCards);
   // Clear the table
+  // Get an array of shuffled cards
+  const cardsShuffled = groupCards();
   table.innerHTML = "";
   // Loop through the shuffled cards
   cardsShuffled.forEach((element) => {

@@ -35,7 +35,7 @@ const start = () => {
   // Set the move display to 00
   document.querySelector("#mov").innerText = "00";
   // Call the dealCards() function
-  dealCards(levels[levelActual].cards);
+  dealCards();
   // Call the maxCounter() function
   maxCounter();
   // Hide the welcome page, menu, and modals
