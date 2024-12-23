@@ -79,7 +79,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-image: url('/Intro_to_Resp_Web_Dev/Project/Images/Fondo1.jpg');
+    background-image: url('/Intro_to_Resp_Web_Dev/Cafe_landing_page/Images/Fondo1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -134,7 +134,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/Intro_to_Resp_Web_Dev/Project/Images/Fondo2.jpg');
+    background-image: url('/Intro_to_Resp_Web_Dev/Cafe_landing_page/Images/Fondo2.jpg');
     background-size: cover;
     background-position: left;
     background-repeat: no-repeat;
