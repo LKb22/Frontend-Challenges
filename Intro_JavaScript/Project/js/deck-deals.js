@@ -19,7 +19,7 @@ Create a function to deal the cards
   Clear the table
   Loops through the cards
     Create a div element and add the class card for styling
-      Add the data-valor attribute
+      Add the data-value attribute
     Create a child div element for the card content and add the class card__content for styling
     Add the text content(element) to the card content as plain text
     Append the card content to the card
@@ -40,8 +40,8 @@ const dealCards = (theCards) => {
     const card = document.createElement("div");
     // Add the class card for styling
     card.classList.add("card");
-    // Add the data-valor attribute
-    card.setAttribute("data-valor", element);
+    // Add the data-value attribute
+    card.setAttribute("data-value", element);
     // Create a child div element for the card content
     const cardContent = document.createElement("div");
     // Add the class card__content

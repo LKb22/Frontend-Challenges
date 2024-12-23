@@ -66,9 +66,9 @@ Create a function to compare the two flipped cards.
 */
 // Compare function
 const compare = (cardsCompare) => {
-  // Get the cards by their index and compare them using the "valor" attribute
+  // Get the cards by their index and compare them using the "value" attribute
   if (
-    cardsCompare[0].dataset.valor === cardsCompare[1].dataset.valor
+    cardsCompare[0].dataset.value === cardsCompare[1].dataset.value
   ) {
     // Same - success
     success(cardsCompare);
