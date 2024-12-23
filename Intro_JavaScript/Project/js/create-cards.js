@@ -28,21 +28,21 @@ const groupCards = () => {
   */
   // Shuffle the array of emojis
     const shuffledEmojis = fisherYatesShuffle(emojiArray);
-    console.log("Shuffled emojis:", shuffledEmojis.length);
+    if (Game.debug) console.log("Shuffled emojis:", shuffledEmojis.length);
 
     // Add another set of pairs for each level increase (use level index + 1)
     const pairsRequired = (Game.levelActual + 1) * 2;
-    console.log("Current level:", Game.levelActual);
-    console.log("# of pairs:", pairsRequired);
+   if (Game.debug) console.log("Current level:", Game.levelActual);
+   if (Game.debug) console.log("# of pairs:", pairsRequired);
     // Slice the array by this number to get the required number of emojis
     const selectedEmojis = shuffledEmojis.slice(0, pairsRequired);
-    console.log("Selected emojis for level:", selectedEmojis);
+   if (Game.debug) console.log("Selected emojis for level:", selectedEmojis);
     // Duplicate the selected emojis to create pairs (2 of each emoji)
     const duplicatedEmojis = [...selectedEmojis, ...selectedEmojis];
-    console.log("Duplicated emojis:", duplicatedEmojis);
+   if (Game.debug) console.log("Duplicated emojis:", duplicatedEmojis);
     // Shuffle the duplicated emojis to randomize the order
     const shuffledDuplicatedEmojis = fisherYatesShuffle(duplicatedEmojis);
-    console.log("Shuffled duplicated emojis:", shuffledDuplicatedEmojis);
+   if (Game.debug) console.log("Shuffled duplicated emojis:", shuffledDuplicatedEmojis);
     // Return the shuffled emojis to be used for the card group
     return shuffledDuplicatedEmojis;
   }

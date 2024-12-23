@@ -1,4 +1,5 @@
 const Game = {
+  debug: true,
   modeRelax: false,
   moves: 0,
   levelActual: 0,

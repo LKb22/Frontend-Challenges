@@ -6,7 +6,7 @@ Create a function to be called when a match is found
 // Success function
 const success = (theCards) => {
   // Log the success
-  console.log("Match found! Removing matched cards...");
+  if (Game.debug) console.log("Match found! Removing matched cards...");
   // Add the class "correct" to both cards in the array
   theCards.forEach(element => {
     element.classList.add("correct");
@@ -27,7 +27,7 @@ Create a function to be called when a match is not found
 // Error function
 const error = (theCards) => {
   // Log the error
-  console.log("No match! Flipping back over...");
+  if (Game.debug) console.log("No match! Flipping back over...");
   // Add the class "error" to both cards in the array
   theCards.forEach(element => {
     element.classList.add("error");

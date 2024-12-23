@@ -37,7 +37,7 @@ const initiateStopwatch = () => {
       // Decrement the minutes by 1
       minutes--;
       // Log
-      console.log("Minus 1 minute");
+      if (Game.debug) console.log("Minus 1 minute");
     };
     // If the minutes reach less than 0
     if (minutes < 0) {
@@ -47,7 +47,7 @@ const initiateStopwatch = () => {
       // Stop the timer
       clearInterval(stopwatch);
       // Log
-      console.log("Time over");
+      if (Game.debug) console.log("Time over");
       // Call the timeOver function
       timeOver();
     };

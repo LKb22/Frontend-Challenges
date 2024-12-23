@@ -20,7 +20,7 @@ const discover = function () {
     ".discovered:not(.correct)"
   );
   // Log the click event
-  console.log("Card clicked!");
+  if (Game.debug) console.log("Card clicked!");
   // If two cards are already opened, do nothing
   if (openedCards.length > 1) {
     return;
@@ -28,8 +28,8 @@ const discover = function () {
   // Reveal the clicked card by adding the "discovered" class to flip it
   this.classList.add("discovered");
   // Log the flipped card and the total number of unmatched flipped cards
-  console.log("Card flipped", this);
-  console.log("Total unmatched flipped:", openedCards.length + 1,);
+  if (Game.debug) console.log("Card flipped", this);
+  if (Game.debug) console.log("Total unmatched flipped:", openedCards.length + 1,);
   // Play the card click sound for only the first card in a pair
   if (openedCards.length === 0) {
     document
@@ -45,7 +45,7 @@ const discover = function () {
   };
   // Else, compare the two flipped cards
   // Log the card comparison
-  console.log("Comparing cards:", updatedOpenedCards);
+  if (Game.debug) console.log("Comparing cards:", updatedOpenedCards);
   // Call the compare function to compare the two flipped cards
   compare(updatedOpenedCards);
   // Update the counter

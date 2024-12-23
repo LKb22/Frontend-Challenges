@@ -27,10 +27,10 @@ const updateCounter = () => {
   // Update the display variable with the number of moves
   movesText = Game.moves;
   // Log the information to the console
-  console.log("Current number of moves", Game.moves);
-  console.log("Relax mode activated?:", Game.modeRelax);
-  console.log("Current level:", Game.levelActual + 1);
-  console.log("Max moves allowed:", Game.levels[Game.levelActual].movesMax);
+  if (Game.debug) console.log("Current number of moves", Game.moves);
+  if (Game.debug) console.log("Relax mode activated?:", Game.modeRelax);
+  if (Game.debug) console.log("Current level:", Game.levelActual + 1);
+  if (Game.debug) console.log("Max moves allowed:", Game.levels[Game.levelActual].movesMax);
   // Limit the number of moves
   if (Game.moves > Game.levels[Game.levelActual].movesMax && !Game.modeRelax) {
     // Call the gameOver function if the number of moves exceeds the limit

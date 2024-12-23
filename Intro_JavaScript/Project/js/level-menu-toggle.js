@@ -46,7 +46,7 @@ Create a function to close the level menu when the escape key is pressed
 // Create the escape key function
 const EscKeyCloseMenu = (event) => {
   // Log the key pressed for debugging purposes
-  console.log(event.key);
+  if (Game.debug) console.log(event.key);
   // If the escape key is pressed, hide the menu
   if (event.key === "Escape") {
     hideMenuLevels();

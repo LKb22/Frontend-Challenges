@@ -39,6 +39,6 @@ const dealCards = () => {
     // Append the card to the table
     table.appendChild(card);
     // Log the cards added to the console
-    console.log("Cards added", card.index);
+    if (Game.debug) console.log("Cards added", card.index);
   });
 };
