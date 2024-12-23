@@ -1,8 +1,11 @@
 /* Create a countdown timer
 Create a countdown timer for each round of the game
   Create the start timer function
+    Fetch the time limit from the levels array for the current level (in seconds)
     The timer has both seconds and minutes
     Initialize the seconds and minutes variables
+      Divide seconds by 60 to get the minutes and use math.floor to round down to the nearest whole number
+      Use the modulo operator to get thhe remainder, which is the seconds
     Initialize the variables to display the time
     Create the update timer function
       Decrement the seconds by 1 each second
@@ -17,10 +20,12 @@ Create a countdown timer for each round of the game
 */
 // Create the start timer function
 const initiateStopwatch = () => {
-  // Seconds can start at 10
-  let seconds = 10;
+  // Fetch the time limit from the levels array for the current level
+  const timeLimit = Game.levels[Game.levelActual].timeLimit;
   // Minutes
-  let minutes = 0;
+  let minutes = Math.floor(timeLimit / 60);
+  // Seconds
+  let seconds = timeLimit % 60;
   // Initialize the variables to display the time
   // Seconds
   let secondsText;
