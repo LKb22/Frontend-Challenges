@@ -1,0 +1,17 @@
+{
+  "name": "html_css_js",
+  "version": "1.0.0",
+  "description": "",
+  "source": "./src/index.html",
+  "scripts": {
+    "start": "npm run prebuild && parcel",
+    "build": "parcel build",
+    "prebuild": "rm -rf dist"
+  },
+  "browserList": "> 0.5%, last 2 versions, not dead",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}
