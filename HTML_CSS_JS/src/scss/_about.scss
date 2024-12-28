@@ -1,0 +1,34 @@
+/* About */
+section.about {
+
+  .empty {
+    flex-basis: 37.5vw;
+    background: var(--grey);
+    border-radius: var(--border-radius);
+  }
+
+  article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      background: var(--blue);
+      border-radius: var(--border-radius);
+      padding: var(--gutter);
+    }
+
+    .description {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      background: var(--pink);
+      border-radius: var(--border-radius);
+      padding: var(--gutter);
+      color: var(--black);
+    }
+  }
+}

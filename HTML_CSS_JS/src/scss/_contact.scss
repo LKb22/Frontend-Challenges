@@ -1,0 +1,19 @@
+section.contact {
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#1c47ff, #d0ff94 60%, #d6a3fb 70%, #e5e5e5);
+  border-radius: var(--border-radius);
+
+  a {
+    font-size: 100px;
+    color: var(--black);
+    font-weight: bold;
+  }
+}
+
+section.contact.full-screen {
+  height: 100vh;
+  top: 0;
+  margin-top: 0;
+  z-index: 3;
+}
