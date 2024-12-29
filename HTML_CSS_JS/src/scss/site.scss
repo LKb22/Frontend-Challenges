@@ -22,6 +22,9 @@ html, body {
   padding: 0;
   background: var(--black);
   color: var(--white);
-  font-size: clamp(18px, 6.25vw, 22px);
+  font-size: clamp(14px, 5vw, 22px);
   font-family: "Syne", serif;
 }
+
+
+// Media Queries

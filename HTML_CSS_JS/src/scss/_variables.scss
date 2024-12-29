@@ -1,10 +1,27 @@
+// Define breakpoints
+$mobile-sm: 320px;
+$mobile-md: 480px;
 $tablet: 768px;
-$desktop: 1024px;
+$small-laptop: 1024px;
+$desktop-sm: 1279px;
+$desktop-lg: 1280px;
 
 @mixin respond($breakpoint) {
-  @if $breakpoint == tablet {
+  @if $breakpoint == mobile-sm {
+    @media (min-width: #{$mobile-sm}) { @content; }
+  } @else if $breakpoint == mobile-md {
+    @media (min-width: #{$mobile-md}) { @content; }
+  }
+  @else if $breakpoint == tablet {
     @media (min-width: #{$tablet}) { @content; }
-  } @else if $breakpoint == desktop {
-    @media (min-width: #{$desktop}) { @content; }
+  }
+  @else if $breakpoint == small-laptop {
+    @media (min-width: #{$small-laptop}) { @content; }
+  }
+  @else if $breakpoint == desktop-sm {
+    @media (min-width: #{$desktop-sm}) { @content; }
+  }
+  @else if $breakpoint == desktop-lg {
+    @media (min-width: #{$desktop-lg}) { @content; }
   }
 }

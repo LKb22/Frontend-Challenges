@@ -1,13 +1,13 @@
 @use './_variables' as *;
 
 h1 {
-  font-size: clamp(34px, 11.25vw, 70px);
+  font-size: clamp(28px, 9.375vw, 70px);
   line-height: 1.2em;
   margin: 0px;
 }
 
 h2 {
-  font-size: clamp(28px, 9.375vw, 60px);
+  font-size: clamp(22px, 7.5vw, 60px);
   margin: 0px;
 }
 
@@ -27,3 +27,5 @@ section {
   top: 60px;
   z-index: 2;
 }
+
+// Media Queries

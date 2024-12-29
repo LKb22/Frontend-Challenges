@@ -35,20 +35,19 @@ section.about {
 section.about .empty {
   background: var(--grey);
   border-radius: var(--border-radius);
-  flex-basis: auto;
-  height: 100px;
+  flex: .5;
 }
 
 section.about article {
   flex-direction: column;
-  flex: 1;
+  flex: 2;
   display: flex;
 }
 
 section.about article .title {
   background: var(--blue);
   border-radius: var(--border-radius);
-  flex: auto;
+  flex: 1;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -59,7 +58,7 @@ section.about article .description {
   background: var(--pink);
   border-radius: var(--border-radius);
   color: var(--black);
-  flex: auto;
+  flex: 2.5;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -73,19 +72,17 @@ section.service {
 
 section.service article {
   flex-direction: column;
-  width: 100%;
+  flex: 1;
   display: flex;
 }
 
 section.service figure {
   background: var(--green);
   border-radius: var(--border-radius);
-  flex-basis: auto;
+  flex: 1;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 200px;
-  margin: 0 0 20px;
+  margin: 0;
   display: flex;
 }
 
@@ -97,10 +94,9 @@ section.service .text {
   border-radius: var(--border-radius);
   background: #1f1a1c;
   flex-direction: column;
-  flex: auto;
+  flex: 2;
   justify-content: center;
   align-items: center;
-  width: 100%;
   padding: 20px;
   display: flex;
 }
@@ -178,6 +174,6 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Syne, serif;
-  font-size: clamp(18px, 6.25vw, 22px);
+  font-size: clamp(14px, 5vw, 22px);
 }
 /*# sourceMappingURL=index.511a0035.css.map */
