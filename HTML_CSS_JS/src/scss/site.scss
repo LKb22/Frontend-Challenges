@@ -1,3 +1,4 @@
+@use './_variables' as *;
 @use './_nav.scss' as *;
 @use './_about.scss' as *;
 @use './_service.scss' as *;
@@ -8,19 +9,19 @@
 }
 
 html, body {
-  --border-radius: 100px;
+  --border-radius: 50px;
   --blue: #1c47ff;
   --pink: #d6a3fb;
   --green: #d0ff94;
   --grey: #e5e5e5;
   --white: #ffffff;
   --black: #000000;
-  --gutter: 3.125vw 6.25vw;
+  --gutter: 6.25vw;
 
   margin: 0;
   padding: 0;
   background: var(--black);
   color: var(--white);
-  font-size: 20px;
-  font-family: sans-serif;
+  font-size: 16px;
+  font-family: "Syne", serif;
 }

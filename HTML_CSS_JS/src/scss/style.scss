@@ -1,24 +1,28 @@
+@use './_variables' as *;
+
 h1 {
-  font-size: 70px;
-  line-height: 1em;
+  font-size: 40px;
+  line-height: 1.2em;
   margin: 0px;
 }
 
 h2 {
-  font-size: 60px;
+  font-size: 30px;
   margin: 0px;
 }
 
 a {
   color: var(--white);
   text-decoration: none;
+  font-family: "Space Mono", serif;
 }
 
 section {
   position: relative;
   display: flex;
+  flex-direction: column;
   width: 100%;
-  height: calc(100vh - 100px);
-  top: 100px;
+  height: calc(100vh - 60px);
+  top: 60px;
   z-index: 2;
 }
