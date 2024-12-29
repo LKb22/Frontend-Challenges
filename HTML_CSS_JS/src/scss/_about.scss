@@ -6,7 +6,7 @@ section.about {
 
   .empty {
     flex-basis: auto;
-    height: 150px;
+    height: 100px;
     background: var(--grey);
     border-radius: var(--border-radius);
   }
@@ -24,7 +24,6 @@ section.about {
       background: var(--blue);
       border-radius: var(--border-radius);
       padding: 20px;
-      font-size: 18px;
     }
 
     .description {
@@ -35,7 +34,6 @@ section.about {
       background: var(--pink);
       border-radius: var(--border-radius);
       padding: 20px;
-      font-size: 16px;
       color: var(--black);
     }
   }

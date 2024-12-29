@@ -1,17 +1,18 @@
 h1 {
   margin: 0;
-  font-size: 40px;
+  font-size: clamp(34px, 11.25vw, 70px);
   line-height: 1.2em;
 }
 
 h2 {
   margin: 0;
-  font-size: 30px;
+  font-size: clamp(28px, 9.375vw, 60px);
 }
 
 a {
   color: var(--white);
   font-family: Space Mono, serif;
+  font-size: clamp(18px, 6.25vw, 22px);
   text-decoration: none;
 }
 

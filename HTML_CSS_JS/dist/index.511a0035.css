@@ -2,7 +2,6 @@ nav {
   z-index: 1;
   width: 100%;
   height: 60px;
-  font-size: 16px;
   position: fixed;
   top: 0;
   left: 0;
@@ -25,7 +24,7 @@ nav ul li {
 
 nav ul li a {
   color: var(--white);
-  font-size: 14px;
+  font-size: clamp(12px, 4.375vw, 20px);
 }
 
 section.about {
@@ -37,7 +36,7 @@ section.about .empty {
   background: var(--grey);
   border-radius: var(--border-radius);
   flex-basis: auto;
-  height: 150px;
+  height: 100px;
 }
 
 section.about article {
@@ -53,7 +52,6 @@ section.about article .title {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  font-size: 18px;
   display: flex;
 }
 
@@ -65,7 +63,6 @@ section.about article .description {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  font-size: 16px;
   display: flex;
 }
 
@@ -93,7 +90,7 @@ section.service figure {
 }
 
 section.service figure img {
-  width: 50%;
+  width: 40%;
 }
 
 section.service .text {
@@ -151,7 +148,7 @@ section.contact a {
   color: var(--black);
   text-align: center;
   word-wrap: break-word;
-  font-size: 35px;
+  font-size: clamp(26px, 8.75vw, 100px);
   font-weight: bold;
 }
 
@@ -181,6 +178,6 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Syne, serif;
-  font-size: 16px;
+  font-size: clamp(18px, 6.25vw, 22px);
 }
 /*# sourceMappingURL=index.511a0035.css.map */

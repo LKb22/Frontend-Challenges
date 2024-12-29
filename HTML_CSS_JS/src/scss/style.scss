@@ -1,19 +1,20 @@
 @use './_variables' as *;
 
 h1 {
-  font-size: 40px;
+  font-size: clamp(34px, 11.25vw, 70px);
   line-height: 1.2em;
   margin: 0px;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: clamp(28px, 9.375vw, 60px);
   margin: 0px;
 }
 
 a {
   color: var(--white);
   text-decoration: none;
+  font-size: clamp(18px, 6.25vw, 22px);
   font-family: "Space Mono", serif;
 }
 
