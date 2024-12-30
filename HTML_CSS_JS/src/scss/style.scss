@@ -1,4 +1,4 @@
-@use './_variables' as *;
+@use './_breakpoints' as *;
 
 h1 {
   font-size: clamp(28px, 9.375vw, 70px);

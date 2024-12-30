@@ -1,4 +1,4 @@
-@use './_variables' as *;
+@use './_breakpoints' as *;
 
 section.contact {
   display: flex;
@@ -25,5 +25,3 @@ section.contact.full-screen {
   margin-top: 0;
   z-index: 3;
 }
-
-// Media Queries

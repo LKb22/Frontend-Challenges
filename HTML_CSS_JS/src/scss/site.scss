@@ -1,4 +1,4 @@
-@use './_variables' as *;
+@use './_breakpoints' as *;
 @use './_nav.scss' as *;
 @use './_about.scss' as *;
 @use './_service.scss' as *;
@@ -9,13 +9,14 @@
 }
 
 html, body {
-  --border-radius: 50px;
   --blue: #1c47ff;
   --pink: #d6a3fb;
   --green: #d0ff94;
   --grey: #e5e5e5;
   --white: #ffffff;
   --black: #000000;
+  --text-background: #1f1a1c;
+  --border-radius: 50px;
   --gutter: 6.25vw;
 
   margin: 0;
@@ -25,6 +26,3 @@ html, body {
   font-size: clamp(14px, 5vw, 24px);
   font-family: "Syne", serif;
 }
-
-
-// Media Queries

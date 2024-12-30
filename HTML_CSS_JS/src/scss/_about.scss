@@ -1,4 +1,4 @@
-@use './_variables' as *;
+@use './_breakpoints' as *;
 
 section.about {
   display: flex;
@@ -46,6 +46,16 @@ section.about {
     .empty {
       flex: 1;
     }
+
+    article {
+      .title {
+        justify-content: left;
+      }
+
+      .description {
+        justify-content: left;
+      }
+    }
   }
 }
 
@@ -57,10 +67,6 @@ section.about {
 
     article {
       flex: 1;
-
-      .description {
-        justify-content: left;
-      }
     }
   }
 }

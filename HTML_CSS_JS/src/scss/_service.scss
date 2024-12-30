@@ -1,4 +1,4 @@
-@use './_variables' as *;
+@use './_breakpoints' as *;
 
 section.service {
   article {
@@ -26,7 +26,7 @@ section.service {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #1f1a1c;
+    background: var(--text-background);
     padding: var(--gutter);
     border-radius: var(--border-radius);
     flex: 2;
@@ -90,6 +90,7 @@ section.service.service-js.sticky {
 
     .text {
       flex: 1;
+      align-items: flex-start;
     }
   }
 
@@ -104,10 +105,6 @@ section.service.service-js.sticky {
   section.service {
     figure {
       flex: 2;
-    }
-
-    .text {
-      align-items: flex-start;
     }
   }
 }

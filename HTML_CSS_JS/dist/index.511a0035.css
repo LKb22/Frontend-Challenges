@@ -87,15 +87,15 @@ section.about article .description {
   section.about .empty {
     flex: 1;
   }
+
+  section.about article .title, section.about article .description {
+    justify-content: left;
+  }
 }
 
 @media (width >= 1024px) {
   section.about .empty, section.about article {
     flex: 1;
-  }
-
-  section.about article .description {
-    justify-content: left;
   }
 }
 
@@ -120,9 +120,9 @@ section.service figure img {
 }
 
 section.service .text {
+  background: var(--text-background);
   padding: var(--gutter);
   border-radius: var(--border-radius);
-  background: #1f1a1c;
   flex-direction: column;
   flex: 2;
   justify-content: center;
@@ -174,6 +174,7 @@ section.service.service-html.sticky, section.service.service-css.sticky, section
 
   section.service .text {
     flex: 1;
+    align-items: flex-start;
   }
 
   section.service.service-html.sticky, section.service.service-css.sticky, section.service.service-js.sticky {
@@ -184,10 +185,6 @@ section.service.service-html.sticky, section.service.service-css.sticky, section
 @media (width >= 1024px) {
   section.service figure {
     flex: 2;
-  }
-
-  section.service .text {
-    align-items: flex-start;
   }
 }
 
@@ -222,13 +219,14 @@ section.contact.full-screen {
 }
 
 html, body {
-  --border-radius: 50px;
   --blue: #1c47ff;
   --pink: #d6a3fb;
   --green: #d0ff94;
   --grey: #e5e5e5;
   --white: #fff;
   --black: #000;
+  --text-background: #1f1a1c;
+  --border-radius: 50px;
   --gutter: 6.25vw;
   background: var(--black);
   color: var(--white);
