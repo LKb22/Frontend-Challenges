@@ -3,11 +3,12 @@
 section.about {
   display: flex;
   flex-direction: column;
+  flex: 1;
 
   .empty {
     background: var(--grey);
     border-radius: var(--border-radius);
-    flex: 0.5;
+    flex: 1;
   }
 
   article {
@@ -33,7 +34,7 @@ section.about {
       border-radius: var(--border-radius);
       padding: var(--gutter);
       color: var(--black);
-      flex: 1;
+      flex: 2;
     }
   }
 }
@@ -43,10 +44,6 @@ section.about {
   section.about {
     flex-direction: row;
 
-    .empty {
-      flex: 1;
-    }
-
     article {
       .title {
         justify-content: left;
@@ -55,18 +52,6 @@ section.about {
       .description {
         justify-content: left;
       }
-    }
-  }
-}
-
-@include respond(small-laptop) {
-  section.about {
-    .empty {
-      flex: 1;
-    }
-
-    article {
-      flex: 1;
     }
   }
 }

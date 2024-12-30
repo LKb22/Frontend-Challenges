@@ -80,16 +80,7 @@ section.service.service-js.sticky {
       flex-direction: row;
     }
 
-    figure {
-      flex: 1;
-
-      img {
-        width: 60%;
-      }
-    }
-
     .text {
-      flex: 1;
       align-items: flex-start;
     }
   }
@@ -98,13 +89,5 @@ section.service.service-js.sticky {
   section.service.service-css.sticky,
   section.service.service-js.sticky {
     margin-top: 100px;
-  }
-}
-
-@include respond(small-laptop) {
-  section.service {
-    figure {
-      flex: 2;
-    }
   }
 }

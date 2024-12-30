@@ -24,7 +24,6 @@ nav ul li {
 
 nav ul li a {
   color: var(--white);
-  font-size: clamp(12px, 4.375vw, 20px);
 }
 
 @media (width >= 768px) {
@@ -43,13 +42,14 @@ nav ul li a {
 
 section.about {
   flex-direction: column;
+  flex: 1;
   display: flex;
 }
 
 section.about .empty {
   background: var(--grey);
   border-radius: var(--border-radius);
-  flex: .5;
+  flex: 1;
 }
 
 section.about article {
@@ -73,7 +73,7 @@ section.about article .description {
   border-radius: var(--border-radius);
   padding: var(--gutter);
   color: var(--black);
-  flex: 1;
+  flex: 2;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -84,18 +84,8 @@ section.about article .description {
     flex-direction: row;
   }
 
-  section.about .empty {
-    flex: 1;
-  }
-
   section.about article .title, section.about article .description {
     justify-content: left;
-  }
-}
-
-@media (width >= 1024px) {
-  section.about .empty, section.about article {
-    flex: 1;
   }
 }
 
@@ -164,27 +154,12 @@ section.service.service-html.sticky, section.service.service-css.sticky, section
     flex-direction: row;
   }
 
-  section.service figure {
-    flex: 1;
-  }
-
-  section.service figure img {
-    width: 60%;
-  }
-
   section.service .text {
-    flex: 1;
     align-items: flex-start;
   }
 
   section.service.service-html.sticky, section.service.service-css.sticky, section.service.service-js.sticky {
     margin-top: 100px;
-  }
-}
-
-@media (width >= 1024px) {
-  section.service figure {
-    flex: 2;
   }
 }
 
@@ -202,7 +177,6 @@ section.contact a {
   color: var(--black);
   text-align: center;
   word-wrap: break-word;
-  font-size: clamp(26px, 8.75vw, 100px);
   font-weight: bold;
 }
 
@@ -233,6 +207,5 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Syne, serif;
-  font-size: clamp(14px, 5vw, 24px);
 }
 /*# sourceMappingURL=index.511a0035.css.map */
