@@ -29,3 +29,12 @@ section {
 }
 
 // Media Queries
+@include respond(mobile-md) {
+  h2 {
+    font-size: clamp(38px, 8.333333vw, 42px);
+  }
+
+  a {
+    font-size: clamp(28px, 6.25vw, 32px);
+  }
+}

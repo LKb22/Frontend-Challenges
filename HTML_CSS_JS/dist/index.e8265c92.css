@@ -25,4 +25,14 @@ section {
   position: relative;
   top: 60px;
 }
+
+@media (width >= 480px) {
+  h2 {
+    font-size: clamp(38px, 8.33333vw, 42px);
+  }
+
+  a {
+    font-size: clamp(28px, 6.25vw, 32px);
+  }
+}
 /*# sourceMappingURL=index.e8265c92.css.map */
