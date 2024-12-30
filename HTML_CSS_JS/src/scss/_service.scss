@@ -27,7 +27,7 @@ section.service {
     justify-content: center;
     align-items: center;
     background: #1f1a1c;
-    padding: 20px;
+    padding: var(--gutter);
     border-radius: var(--border-radius);
     flex: 2;
   }
@@ -76,8 +76,6 @@ section.service.service-js.sticky {
 // Media Queries
 @include respond(tablet) {
   section.service {
-    flex-direction: row;
-
     article {
       flex-direction: row;
     }
@@ -92,7 +90,6 @@ section.service.service-js.sticky {
 
     .text {
       flex: 1;
-      padding: var(--gutter);
     }
   }
 
@@ -100,5 +97,17 @@ section.service.service-js.sticky {
   section.service.service-css.sticky,
   section.service.service-js.sticky {
     margin-top: 100px;
+  }
+}
+
+@include respond(small-laptop) {
+  section.service {
+    figure {
+      flex: 2;
+    }
+
+    .text {
+      align-items: flex-start;
+    }
   }
 }

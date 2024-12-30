@@ -12,7 +12,7 @@ h2 {
 a {
   color: var(--white);
   font-family: Space Mono, serif;
-  font-size: clamp(18px, 6.25vw, 22px);
+  font-size: clamp(18px, 6.25vw, 30px);
   text-decoration: none;
 }
 
@@ -24,16 +24,6 @@ section {
   display: flex;
   position: relative;
   top: 60px;
-}
-
-@media (width >= 480px) {
-  h2 {
-    font-size: clamp(38px, 8.33333vw, 42px);
-  }
-
-  a {
-    font-size: clamp(28px, 6.25vw, 32px);
-  }
 }
 
 @media (width >= 768px) {

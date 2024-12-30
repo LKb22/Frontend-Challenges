@@ -16,13 +16,13 @@ section.about {
     flex: 2;
 
     .title {
-      flex: 1;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       background: var(--blue);
       border-radius: var(--border-radius);
-      padding: 20px;
+      padding: var(--gutter);
+      flex: 1;
     }
 
     .description {
@@ -31,7 +31,7 @@ section.about {
       justify-content: center;
       background: var(--pink);
       border-radius: var(--border-radius);
-      padding: 20px;
+      padding: var(--gutter);
       color: var(--black);
       flex: 1;
     }
@@ -46,15 +46,20 @@ section.about {
     .empty {
       flex: 1;
     }
+  }
+}
+
+@include respond(small-laptop) {
+  section.about {
+    .empty {
+      flex: 1;
+    }
 
     article {
-      .title {
-        align-items: flex-end;
-        padding: var(--gutter);
-      }
+      flex: 1;
 
       .description {
-        padding: var(--gutter);
+        justify-content: left;
       }
     }
   }

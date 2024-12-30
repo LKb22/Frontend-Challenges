@@ -61,21 +61,21 @@ section.about article {
 section.about article .title {
   background: var(--blue);
   border-radius: var(--border-radius);
+  padding: var(--gutter);
   flex: 1;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-end;
   display: flex;
 }
 
 section.about article .description {
   background: var(--pink);
   border-radius: var(--border-radius);
+  padding: var(--gutter);
   color: var(--black);
   flex: 1;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   display: flex;
 }
 
@@ -87,14 +87,15 @@ section.about article .description {
   section.about .empty {
     flex: 1;
   }
+}
 
-  section.about article .title {
-    padding: var(--gutter);
-    align-items: flex-end;
+@media (width >= 1024px) {
+  section.about .empty, section.about article {
+    flex: 1;
   }
 
   section.about article .description {
-    padding: var(--gutter);
+    justify-content: left;
   }
 }
 
@@ -119,13 +120,13 @@ section.service figure img {
 }
 
 section.service .text {
+  padding: var(--gutter);
   border-radius: var(--border-radius);
   background: #1f1a1c;
   flex-direction: column;
   flex: 2;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   display: flex;
 }
 
@@ -159,7 +160,7 @@ section.service.service-html.sticky, section.service.service-css.sticky, section
 }
 
 @media (width >= 768px) {
-  section.service, section.service article {
+  section.service article {
     flex-direction: row;
   }
 
@@ -172,12 +173,21 @@ section.service.service-html.sticky, section.service.service-css.sticky, section
   }
 
   section.service .text {
-    padding: var(--gutter);
     flex: 1;
   }
 
   section.service.service-html.sticky, section.service.service-css.sticky, section.service.service-js.sticky {
     margin-top: 100px;
+  }
+}
+
+@media (width >= 1024px) {
+  section.service figure {
+    flex: 2;
+  }
+
+  section.service .text {
+    align-items: flex-start;
   }
 }
 
@@ -225,12 +235,6 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Syne, serif;
-  font-size: clamp(14px, 5vw, 18px);
-}
-
-@media (width >= 480px) {
-  html, body {
-    font-size: clamp(22px, 5vw, 26px);
-  }
+  font-size: clamp(14px, 5vw, 24px);
 }
 /*# sourceMappingURL=index.511a0035.css.map */
