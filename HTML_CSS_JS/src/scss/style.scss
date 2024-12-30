@@ -38,3 +38,10 @@ section {
     font-size: clamp(28px, 6.25vw, 32px);
   }
 }
+
+@include respond(tablet) {
+  section {
+    height: calc(100vh - 100px);
+    top: 100px;
+  }
+}

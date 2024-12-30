@@ -30,3 +30,16 @@ nav {
 }
 
 // Media Queries
+@include respond(tablet) {
+  nav {
+    height: 100px;
+
+    ul {
+      justify-content: flex-start;
+
+      li {
+        margin-left: 45px;
+      }
+    }
+  }
+}

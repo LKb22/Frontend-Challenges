@@ -33,9 +33,29 @@ section.about {
       border-radius: var(--border-radius);
       padding: 20px;
       color: var(--black);
-      flex: 2.5;
+      flex: 1;
     }
   }
 }
 
 // Media Queries
+@include respond(tablet) {
+  section.about {
+    flex-direction: row;
+
+    .empty {
+      flex: 1;
+    }
+
+    article {
+      .title {
+        align-items: flex-end;
+        padding: var(--gutter);
+      }
+
+      .description {
+        padding: var(--gutter);
+      }
+    }
+  }
+}

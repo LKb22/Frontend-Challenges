@@ -27,6 +27,20 @@ nav ul li a {
   font-size: clamp(12px, 4.375vw, 20px);
 }
 
+@media (width >= 768px) {
+  nav {
+    height: 100px;
+  }
+
+  nav ul {
+    justify-content: flex-start;
+  }
+
+  nav ul li {
+    margin-left: 45px;
+  }
+}
+
 section.about {
   flex-direction: column;
   display: flex;
@@ -58,16 +72,30 @@ section.about article .description {
   background: var(--pink);
   border-radius: var(--border-radius);
   color: var(--black);
-  flex: 2.5;
+  flex: 1;
   justify-content: center;
   align-items: center;
   padding: 20px;
   display: flex;
 }
 
-section.service {
-  flex-direction: column;
-  display: flex;
+@media (width >= 768px) {
+  section.about {
+    flex-direction: row;
+  }
+
+  section.about .empty {
+    flex: 1;
+  }
+
+  section.about article .title {
+    padding: var(--gutter);
+    align-items: flex-end;
+  }
+
+  section.about article .description {
+    padding: var(--gutter);
+  }
 }
 
 section.service article {
@@ -128,6 +156,29 @@ section.service.service-js .text h2, section.service.service-js .text a {
 section.service.service-html.sticky, section.service.service-css.sticky, section.service.service-js.sticky {
   margin-top: 60px;
   position: sticky;
+}
+
+@media (width >= 768px) {
+  section.service, section.service article {
+    flex-direction: row;
+  }
+
+  section.service figure {
+    flex: 1;
+  }
+
+  section.service figure img {
+    width: 60%;
+  }
+
+  section.service .text {
+    padding: var(--gutter);
+    flex: 1;
+  }
+
+  section.service.service-html.sticky, section.service.service-css.sticky, section.service.service-js.sticky {
+    margin-top: 100px;
+  }
 }
 
 section.contact {

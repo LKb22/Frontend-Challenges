@@ -1,9 +1,6 @@
 @use './_variables' as *;
 
 section.service {
-  display: flex;
-  flex-direction: column;
-
   article {
     display: flex;
     flex-direction: column;
@@ -77,3 +74,31 @@ section.service.service-js.sticky {
 }
 
 // Media Queries
+@include respond(tablet) {
+  section.service {
+    flex-direction: row;
+
+    article {
+      flex-direction: row;
+    }
+
+    figure {
+      flex: 1;
+
+      img {
+        width: 60%;
+      }
+    }
+
+    .text {
+      flex: 1;
+      padding: var(--gutter);
+    }
+  }
+
+  section.service.service-html.sticky,
+  section.service.service-css.sticky,
+  section.service.service-js.sticky {
+    margin-top: 100px;
+  }
+}
