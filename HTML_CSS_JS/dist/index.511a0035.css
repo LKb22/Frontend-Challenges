@@ -154,7 +154,12 @@ section.service.service-html.sticky, section.service.service-css.sticky, section
     flex-direction: row;
   }
 
+  section.service figure {
+    flex: 2;
+  }
+
   section.service .text {
+    flex: 1;
     align-items: flex-start;
   }
 
@@ -207,5 +212,11 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Syne, serif;
+}
+
+@media (width >= 768px) {
+  html, body {
+    --border-radius: 100px;
+  }
 }
 /*# sourceMappingURL=index.511a0035.css.map */

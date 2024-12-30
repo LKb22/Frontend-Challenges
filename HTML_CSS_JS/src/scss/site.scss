@@ -25,3 +25,9 @@ html, body {
   color: var(--white);
   font-family: "Syne", serif;
 }
+
+@include respond(tablet) {
+  html, body {
+    --border-radius: 100px;
+  }
+}

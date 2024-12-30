@@ -80,7 +80,12 @@ section.service.service-js.sticky {
       flex-direction: row;
     }
 
+    figure {
+      flex: 2;
+    }
+
     .text {
+      flex: 1;
       align-items: flex-start;
     }
   }
