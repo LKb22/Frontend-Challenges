@@ -17,13 +17,14 @@ html, body {
   --black: #000000;
   --text-background: #1f1a1c;
   --border-radius: 50px;
-  --gutter: 6.25vw;
+  --gutter: 3vw 6vw;
 
   margin: 0;
   padding: 0;
   background: var(--black);
   color: var(--white);
   font-family: "Syne", serif;
+  line-height: 1.2;
 }
 
 @include respond(tablet) {

@@ -18,7 +18,7 @@ section.about {
 
     .title {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
       background: var(--blue);
       border-radius: var(--border-radius);
@@ -44,13 +44,22 @@ section.about {
   section.about {
     flex-direction: row;
 
+    .empty {
+      flex: 2;
+    }
+
     article {
+      flex: 3;
+
       .title {
         justify-content: left;
+        align-items: flex-end;
+        flex: 2;
       }
 
       .description {
         justify-content: left;
+        flex: 1;
       }
     }
   }

@@ -1,16 +1,14 @@
-h1 {
+h1, h2, a {
   margin: 0;
-  line-height: 1.2em;
 }
 
-h2 {
-  margin: 0;
+p {
+  margin: 10 0 10, 0;
 }
 
 a {
   color: var(--white);
   font-family: Space Mono, serif;
-  text-decoration: none;
 }
 
 section {
@@ -23,10 +21,86 @@ section {
   top: 60px;
 }
 
+@media (width >= 320px) {
+  h1, h2 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  a {
+    font-size: 20px;
+  }
+}
+
+@media (width >= 480px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  a {
+    font-size: 25px;
+  }
+}
+
 @media (width >= 768px) {
   section {
     height: calc(100vh - 100px);
     top: 100px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 45px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  h1 {
+    font-size: clamp(65px, 5.5vh, 75px);
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  a {
+    font-size: 30px;
+  }
+}
+
+@media (width >= 1440px) {
+  h1 {
+    font-size: 75px;
+  }
+
+  h2 {
+    font-size: 55px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  a {
+    font-size: 35px;
   }
 }
 /*# sourceMappingURL=index.e8265c92.css.map */

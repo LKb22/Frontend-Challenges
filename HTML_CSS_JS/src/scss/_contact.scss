@@ -13,7 +13,8 @@ section.contact {
     color: var(--black);
     font-weight: bold;
     text-align: center;
-    word-wrap: break-word;
+    text-decoration: none;
+    font-size: clamp(1.5rem, 8vw, 8rem);
   }
 }
 

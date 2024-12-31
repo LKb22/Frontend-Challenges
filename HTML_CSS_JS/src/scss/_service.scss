@@ -81,7 +81,11 @@ section.service.service-js.sticky {
     }
 
     figure {
-      flex: 2;
+      flex: 1.5;
+
+      img {
+        width: 40%;
+      }
     }
 
     .text {
