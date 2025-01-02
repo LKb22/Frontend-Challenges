@@ -2,15 +2,36 @@
 
 h1, h2, a {
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 p {
   margin: 10 0 10, 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 a {
   color: var(--white);
   font-family: "Space Mono", serif;
+}
+
+// Responsive Font Sizes
+h1 {
+  font-size: clamp(1.5rem, calc(3vw + 3vh), 6rem); // Adjust based on viewport width and height
+}
+
+h2 {
+  font-size: clamp(1.75rem, calc(1.75vw + 1.75vh), 4rem);
+}
+
+p {
+  font-size: clamp(1rem, calc(1.3vw + 1.3vh), 3rem);
+}
+
+a {
+  font-size: clamp(1rem, calc(1vw + 1vh), 2rem);
 }
 
 section {
@@ -23,108 +44,9 @@ section {
   z-index: 2;
 }
 
-// Media Queries
-@include respond(mobile-sm) {
-  h1 {
-    font-size: 30px;
-  }
-
-  h2 {
-    font-size: 30px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  a {
-    font-size: 20px;
-  }
-}
-
-@include respond(mobile-md) {
-  h1 {
-    font-size: 50px;
-  }
-
-  h2 {
-    font-size: 40px;
-  }
-
-  p {
-    font-size: 20px;
-  }
-
-  a {
-    font-size: 25px;
-  }
-}
-
 @include respond(tablet) {
   section {
     height: calc(100vh - 100px);
     top: 100px;
-  }
-
-  h1 {
-    font-size: 60px;
-  }
-
-  h2 {
-    font-size: 45px;
-  }
-
-  p {
-    font-size: 20px;
-  }
-}
-
-@include respond(small-laptop) {
-  h1 {
-    font-size: clamp(65px, 5.5vh, 75px);
-  }
-
-  p {
-    font-size: 20px;
-  }
-
-  a {
-    font-size: 30px;
-  }
-}
-
-@include respond(desktop-lg) {
-  h1 {
-    font-size: 75px;
-  }
-
-  h2 {
-    font-size: 55px;
-  }
-
-  p {
-    font-size: 25px;
-  }
-
-  a {
-    font-size: 35px;
-  }
-}
-
-@include respond(desktop-xl) {
-  h1 {
-    font-size: 80px;
-  }
-
-  h2 {
-    font-size: 60px;
-  }
-
-  p {
-    font-size: 30px;
-  }
-
-  a {
-    font-size: 40px;
   }
 }

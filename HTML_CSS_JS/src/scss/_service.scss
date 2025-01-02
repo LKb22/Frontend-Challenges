@@ -29,6 +29,7 @@ section.service {
     background: var(--text-background);
     padding: var(--gutter);
     border-radius: var(--border-radius);
+    overflow: hidden;
     flex: 2;
 
     a {
@@ -68,6 +69,10 @@ section.service.service-css {
 
   figure {
     background: var(--blue);
+
+    img {
+      animation: spin 2s linear infinite;
+    }
   }
 
   .text h2, .text a {
@@ -79,6 +84,11 @@ section.service.service-js {
 
   figure {
     background: var(--pink);
+
+    img {
+      animation: slide 2s linear infinite alternate;
+      animation-timing-function: cubic-bezier(.77,.28,.42,.93);
+    }
   }
 
   .text h2, .text a {
