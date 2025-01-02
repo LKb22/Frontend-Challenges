@@ -141,8 +141,26 @@ section.service .text {
   display: flex;
 }
 
+section.service .text a {
+  will-change: filter, color;
+  transition: filter 2s cubic-bezier(.77, .28, .42, .93), color 2s cubic-bezier(.77, .28, .42, .93);
+}
+
+section.service .text a:hover {
+  filter: blur(20px);
+  color: var(--white) !important;
+}
+
 section.service.service-html figure {
   background: var(--green);
+}
+
+section.service.service-html figure img {
+  animation-name: float;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(.77, .28, .42, .93);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 section.service.service-html .text h2, section.service.service-html .text a {
@@ -195,20 +213,29 @@ section.service.service-html.sticky, section.service.service-css.sticky, section
 
 section.contact {
   border-radius: var(--border-radius);
+  padding: var(--gutter);
+  mix-blend-mode: difference;
   background: linear-gradient(#1c47ff, #d0ff94 60%, #d6a3fb 70%, #e5e5e5);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   display: flex;
+  position: relative;
 }
 
 section.contact a {
   color: var(--black);
   text-align: center;
-  font-size: clamp(1.5rem, 8vw, 8rem);
+  font-size: clamp(1.5rem, 6vw, 8rem);
   font-weight: bold;
   text-decoration: none;
+  animation-name: jump;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(.8, 0, .2, 1);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  top: calc(100vh - 60px);
 }
 
 section.contact.full-screen {
@@ -217,6 +244,88 @@ section.contact.full-screen {
   min-height: 100vh;
   margin-top: 0;
   top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(10%);
+  }
+}
+
+@media (width >= 320px) {
+  @keyframes jump {
+    0% {
+      top: 70px;
+    }
+
+    100% {
+      top: 180px;
+    }
+  }
+}
+
+@media (width >= 480px) {
+  @keyframes jump {
+    0% {
+      top: 70px;
+    }
+
+    100% {
+      top: 260px;
+    }
+  }
+}
+
+@media (width >= 768px) {
+  @keyframes jump {
+    0% {
+      top: 110px;
+    }
+
+    100% {
+      top: calc(100vh - 100px);
+    }
+  }
+}
+
+@media (width >= 1024px) {
+  @keyframes jump {
+    0% {
+      top: 110px;
+    }
+
+    100% {
+      top: calc(100vh - 100px);
+    }
+  }
+}
+
+@media (width >= 1280px) {
+  @keyframes jump {
+    0% {
+      top: 110px;
+    }
+
+    100% {
+      top: calc(100vh - 100px);
+    }
+  }
+}
+
+@media (width >= 1440px) {
+  @keyframes jump {
+    0% {
+      top: 110px;
+    }
+
+    100% {
+      top: calc(100vh - 160px);
+    }
+  }
 }
 
 * {

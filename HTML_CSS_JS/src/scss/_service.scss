@@ -30,6 +30,18 @@ section.service {
     padding: var(--gutter);
     border-radius: var(--border-radius);
     flex: 2;
+
+    a {
+      transition:
+        filter 2s cubic-bezier(.77,.28,.42,.93),
+        color 2s cubic-bezier(.77,.28,.42,.93);
+      will-change: filter, color;
+
+      &:hover {
+        color: var(--white) !important;
+        filter: blur(20px);
+      }
+    }
   }
 }
 
@@ -37,6 +49,14 @@ section.service.service-html {
 
   figure {
     background: var(--green);
+
+    img {
+      animation-name: float;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: cubic-bezier(.77,.28,.42,.93);
+    }
   }
 
   .text h2, .text a {

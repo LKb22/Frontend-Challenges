@@ -7,15 +7,25 @@ section.contact {
   justify-content: center;
   background: linear-gradient(#1c47ff, #d0ff94 60%, #d6a3fb 70%, #e5e5e5);
   border-radius: var(--border-radius);
-  padding: 20px;
+  padding: var(--gutter);
+  mix-blend-mode: difference;
+  position: relative;
 
   a {
     color: var(--black);
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    font-size: clamp(1.5rem, 8vw, 8rem);
-  }
+    font-size: clamp(1.5rem, 6vw, 8rem);
+
+    position: absolute;
+    top: calc(100vh - 60px);
+    animation-name: jump;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.8,0,.2,1);
+    }
 }
 
 section.contact.full-screen {

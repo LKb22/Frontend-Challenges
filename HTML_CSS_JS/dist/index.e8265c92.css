@@ -88,19 +88,19 @@ section {
 
 @media (width >= 1440px) {
   h1 {
-    font-size: 75px;
+    font-size: 80px;
   }
 
   h2 {
-    font-size: 55px;
+    font-size: 60px;
   }
 
   p {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   a {
-    font-size: 35px;
+    font-size: 40px;
   }
 }
 /*# sourceMappingURL=index.e8265c92.css.map */
